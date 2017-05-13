@@ -1,8 +1,6 @@
-# StudentMessageSystem  图书管理系统
+# StudentMessageSystem  学生信息管理系统
 #### 项目基本信息
-* java 
-* jdk：1.8.0_73
-* MySQL 版本：5.5.8
+* 语言：Java（1.8.0_73）	数据库：MySQL（5.5.8）
 
 ##### 相关知识：
 
