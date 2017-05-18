@@ -1,6 +1,5 @@
 package StudentMessageSystem;
 
-import java.util.Date;
 
 /*
  * 学生信息类
