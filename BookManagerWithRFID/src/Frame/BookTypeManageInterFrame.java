@@ -218,7 +218,7 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 
 
 	/**
-	 * Í¼ÊéÀàĞÍ²éÑ¯
+	 * å›¾ä¹¦ç±»å‹æŸ¥è¯¢
 	 */
 	private void searchBookType(String type) {
 		Connection con=null;
@@ -226,7 +226,7 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 		BookType bookType=new BookType(searchTxt.getText(),null);
 		resetValues();
 //		if(StringUtil.isEmpty(bookType.getBooktype())){
-//			JOptionPane.showMessageDialog(null, "Í¼ÊéÀàĞÍÃû³Æ²»ÄÜÎª¿Õ£¡");
+//			JOptionPane.showMessageDialog(null, "å›¾ä¹¦ç±»å‹åç§°ä¸èƒ½ä¸ºç©ºï¼");
 //			return;
 //		}
 		dtm.setRowCount(0);
@@ -235,7 +235,7 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 			ResultSet rs=BookTypeDao.search(con,bookType);
 			if(!rs.next()) {
 				if(type.equals("search"))
-				JOptionPane.showMessageDialog(null,"ÎŞÏà¹ØĞÅÏ¢£¡");
+				JOptionPane.showMessageDialog(null,"æ— ç›¸å…³ä¿¡æ¯ï¼");
 				return;
 			}
 			rs.previous();
@@ -258,7 +258,7 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ±í¸ñĞĞµã»÷ÊÂ¼ş´¦Àí
+	 * è¡¨æ ¼è¡Œç‚¹å‡»äº‹ä»¶å¤„ç†
 	 * @param e
 	 */
 	private void bookTypeTableMousePressed(MouseEvent evt) {
@@ -269,7 +269,7 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ÖØÖÃ±íµ¥
+	 * é‡ç½®è¡¨å•
 	 */
 	private void resetValues(){
 		idTxt.setText("");
@@ -278,18 +278,18 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * Í¼ÊéÀàĞÍĞŞ¸Ä
+	 * å›¾ä¹¦ç±»å‹ä¿®æ”¹
 	 */
 	private void bookTypeUpdate(){
 		String id=idTxt.getText();
 		String bookTypeName=bookTypeNameTxt.getText();
 		String bookTypeDesc=bookTypeDescTxt.getText();
 		if(StringUtil.isEmpty(id)) {
-			JOptionPane.showMessageDialog(null,"±àºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"ç¼–å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(bookTypeName)) {
-			JOptionPane.showMessageDialog(null,"Í¼ÊéÀàĞÍÃû³Æ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç±»å‹åç§°ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		Connection con=null;
@@ -298,16 +298,16 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 			con=dbUtil.getCon();
 			int result=BookTypeDao.isRepeat(con, bookType);
 			if(result==-1){
-				JOptionPane.showMessageDialog(null,"Í¼ÊéÀàĞÍÃû³ÆÒÑ´æÔÚ£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç±»å‹åç§°å·²å­˜åœ¨ï¼");
 				return;
 			}
 			result=BookTypeDao.update(con, bookType);
 			if(result==1){
-				JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡");
+				JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼");
 				resetValues();
 				searchBookType("");
 			}
-			else JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÊ§°Ü£¡");
+			else JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¤±è´¥ï¼");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
@@ -320,12 +320,12 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * Í¼ÊéÀàĞÍÉ¾³ı
+	 * å›¾ä¹¦ç±»å‹åˆ é™¤
 	 */
 	private void bookTypeDelete(){
 		String id=idTxt.getText();
 		if(StringUtil.isEmpty(id)){
-			JOptionPane.showMessageDialog(null,"±àºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"ç¼–å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		Connection con=null;
@@ -334,15 +334,15 @@ public class BookTypeManageInterFrame extends JInternalFrame {
 			con=dbUtil.getCon();
 			ResultSet rs=new BookTypeDao().hasBook(con,bookType);
 			if(rs.next()){
-				JOptionPane.showMessageDialog(null,"´ËÍ¼ÊéÀàĞÍÏÂÓĞÊé£¡²»¿ÉÉ¾³ı£¡");
+				JOptionPane.showMessageDialog(null,"æ­¤å›¾ä¹¦ç±»å‹ä¸‹æœ‰ä¹¦ï¼ä¸å¯åˆ é™¤ï¼");
 				return;
 			}else{
 				int result=new BookTypeDao().delete(con,bookType);
 				if(result==1){
-					JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦£¡");
+					JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸï¼");
 					resetValues();
 					searchBookType("");
-				}else JOptionPane.showMessageDialog(null,"É¾³ıÊ§°Ü£¡");
+				}else JOptionPane.showMessageDialog(null,"åˆ é™¤å¤±è´¥ï¼");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

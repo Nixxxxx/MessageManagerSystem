@@ -35,7 +35,7 @@ public class AboutUsInterFrame extends JInternalFrame {
 		
 		JLabel lblWeCanDo = new JLabel("Nothing is impossible");
 		lblWeCanDo.setForeground(Color.BLUE);
-		lblWeCanDo.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
+		lblWeCanDo.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 20));
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

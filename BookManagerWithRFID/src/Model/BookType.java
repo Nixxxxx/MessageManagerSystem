@@ -2,9 +2,9 @@ package Model;
 
 public class BookType {
 
-	private int id;               //编号
-	private String bookTypeName;	  //图书类型
-	private String bookTypeDesc;  //图书类型描述
+	private int id;               //缂栧彿
+	private String bookTypeName;	  //鍥句功绫诲瀷
+	private String bookTypeDesc;  //鍥句功绫诲瀷鎻忚堪
 	
 	public BookType(){
 		super();

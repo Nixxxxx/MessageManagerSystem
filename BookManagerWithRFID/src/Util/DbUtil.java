@@ -4,30 +4,30 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * Êı¾İ¿â¹¤¾ßÀà
+ * æ•°æ®åº“å·¥å…·ç±»
  * @author JH
  *
  */
 public class DbUtil {
 	
-	private static String dbUrl="jdbc:mysql://localhost:3306/rfid_book";               //Êı¾İ¿âµØÖ·    
-	private static String dbUserName="root";                                    //Êı¾İ¿âÓÃ»§Ãû
-	private static String dbPassword="123456";                                  //Êı¾İ¿âÃÜÂë
-//	private static String jdbcName="com.jdbc.mysql.Drive";                      //Çı¶¯Ãû×Ö
+	private static String dbUrl="jdbc:mysql://localhost:3306/rfid_book";               //æ•°æ®åº“åœ°å€    
+	private static String dbUserName="root";                                    //æ•°æ®åº“ç”¨æˆ·å
+	private static String dbPassword="123456";                                  //æ•°æ®åº“å¯†ç 
+//	private static String jdbcName="com.jdbc.mysql.Drive";                      //é©±åŠ¨åå­—
 	
 	/**
-	 * Êı¾İ¿âÁ´½Ó
+	 * æ•°æ®åº“é“¾æ¥
 	 * @return
 	 * @throws Exception
 	 */
 	public Connection getCon() throws Exception{
-		Class.forName("com.mysql.jdbc.Driver");                                 //¼ÓÔØÇı¶¯
-		Connection con=DriverManager.getConnection(dbUrl,dbUserName,dbPassword);//Êı¾İ¿âÁ´½Ó 
+		Class.forName("com.mysql.jdbc.Driver");                                 //åŠ è½½é©±åŠ¨
+		Connection con=DriverManager.getConnection(dbUrl,dbUserName,dbPassword);//æ•°æ®åº“é“¾æ¥ 
         return con;
 	}
 	
 	/**
-	 * Êı¾İ¿â¹Ø±Õ
+	 * æ•°æ®åº“å…³é—­
 	 * @param pstmt
 	 * @param con
 	 * @throws Exception

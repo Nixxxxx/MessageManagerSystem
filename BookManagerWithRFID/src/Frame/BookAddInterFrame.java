@@ -156,7 +156,7 @@ public class BookAddInterFrame extends JInternalFrame {
 		getContentPane().add(btnNewButton_1);
 		
 		JLabel label_5 = new JLabel("\u56FE\u4E66\u7F16\u53F7\uFF1A");
-		label_5.setFont(new Font("ËÎÌå", Font.BOLD, 17));
+		label_5.setFont(new Font("å®‹ä½“", Font.BOLD, 17));
 		label_5.setBounds(23, 48, 95, 18);
 		getContentPane().add(label_5);
 		
@@ -169,7 +169,7 @@ public class BookAddInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * ÖØÖÃÊÂ¼ş
+	 * é‡ç½®äº‹ä»¶
 	 */
 	private void resetValues() {
 		idTxt.setText("");
@@ -184,7 +184,7 @@ public class BookAddInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * Ìí¼ÓÊÂ¼ş
+	 * æ·»åŠ äº‹ä»¶
 	 */
 	private void bookAdd() {
 		String id=idTxt.getText();
@@ -195,29 +195,29 @@ public class BookAddInterFrame extends JInternalFrame {
 		String press=pressTxt.getText();
 		
 		if(StringUtil.isEmpty(id)){
-			JOptionPane.showMessageDialog(null,"Í¼Êé±àºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç¼–å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(bookName)){
-			JOptionPane.showMessageDialog(null,"Í¼ÊéÃû³Æ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦åç§°ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(author)){
-			JOptionPane.showMessageDialog(null,"Í¼Êé×÷Õß²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä½œè€…ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(press)){
-			JOptionPane.showMessageDialog(null,"³ö°æÉç²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å‡ºç‰ˆç¤¾ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(price)){
-			JOptionPane.showMessageDialog(null,"Í¼Êé¼Û¸ñ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä»·æ ¼ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		
 		String sex="";
-		if(man.isSelected()) sex="ÄĞ";
-		else sex="Å®";
+		if(man.isSelected()) sex="ç”·";
+		else sex="å¥³";
 		
 		BookType bookType=(BookType) bookTypeJcb.getSelectedItem();
 		int bookTypeId=bookType.getId();
@@ -228,12 +228,12 @@ public class BookAddInterFrame extends JInternalFrame {
 			con=dbUtil.getCon();
 			int result=BookDao.add(con,book);
 			if(result==1){
-				JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦");
+				JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸ");
 				resetValues();
-			}else JOptionPane.showMessageDialog(null,"Ìí¼ÓÊ§°Ü£¡");
+			}else JOptionPane.showMessageDialog(null,"æ·»åŠ å¤±è´¥ï¼");
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"Ìí¼ÓÊ§°Ü£¡");
+			JOptionPane.showMessageDialog(null,"æ·»åŠ å¤±è´¥ï¼");
 		}finally{
 			try {
 				dbUtil.close(con);
@@ -244,7 +244,7 @@ public class BookAddInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ÏÂÀ­¿òÌî³ä
+	 * ä¸‹æ‹‰æ¡†å¡«å……
 	 */
 	private void fillBookType(){
 		Connection con=null;

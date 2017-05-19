@@ -12,7 +12,7 @@ public class BookDao {
 
 
 	/**
-	 * Í¼ÊéÌí¼Ó
+	 * å›¾ä¹¦æ·»åŠ 
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -34,7 +34,7 @@ public class BookDao {
 	}
 	
 	/**
-	 * Í¼Êé²éÑ¯(±àºÅid)
+	 * å›¾ä¹¦æŸ¥è¯¢(ç¼–å·id)
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -49,7 +49,7 @@ public class BookDao {
 	
 	
 	/**
-	 * Í¼Êé²éÑ¯(ÆäËûĞÅÏ¢)
+	 * å›¾ä¹¦æŸ¥è¯¢(å…¶ä»–ä¿¡æ¯)
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -65,7 +65,7 @@ public class BookDao {
 	}
 	
 	/**
-	 * Í¼ÊéĞŞ¸Ä
+	 * å›¾ä¹¦ä¿®æ”¹
 	 */
 	public static  int update(Connection con,Book book) throws SQLException{
 		String sql="update book set bookname=?,author=?,sex=?,press=?,price=?,bookTypeId=?,bookdesc=? where id=?";
@@ -83,7 +83,7 @@ public class BookDao {
 
 	
 	/**
-	 * Í¼ÊéÀàĞÍÉ¾³ı
+	 * å›¾ä¹¦ç±»å‹åˆ é™¤
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -97,7 +97,7 @@ public class BookDao {
 	}
 	
 	/**
-	 * ¼ì²éÍ¼Êé×´Ì¬
+	 * æ£€æŸ¥å›¾ä¹¦çŠ¶æ€
 	 * @return
 	 * @throws SQLException 
 	 */
@@ -112,7 +112,7 @@ public class BookDao {
 	}
 	
 	/**
-	 * Í¼Êé±àºÅºÍÑ§Éú±àºÅÆ¥Åä
+	 * å›¾ä¹¦ç¼–å·å’Œå­¦ç”Ÿç¼–å·åŒ¹é…
 	 * @param con
 	 * @param book
 	 * @return
@@ -130,7 +130,7 @@ public class BookDao {
 		return -1;
 	}
 	/**
-	 * Í¼Êé½èÔÄ
+	 * å›¾ä¹¦å€Ÿé˜…
 	 * @param con
 	 * @param book
 	 * @throws SQLException
@@ -148,7 +148,7 @@ public class BookDao {
 	}
 	
 	/**
-	 * Í¼Êé¹é»¹
+	 * å›¾ä¹¦å½’è¿˜
 	 * @throws SQLException 
 	 */
 	public int bookReturn(Connection con,Book book) throws SQLException{
@@ -163,7 +163,7 @@ public class BookDao {
 	
 	
 	/**
-	 * Í¼Êé½èÔÄ¼ÇÂ¼£¨¶ÁÈ¡½è³öÍ¼Êé£©
+	 * å›¾ä¹¦å€Ÿé˜…è®°å½•ï¼ˆè¯»å–å€Ÿå‡ºå›¾ä¹¦ï¼‰
 	 * @param con
 	 * @param book
 	 * @return

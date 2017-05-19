@@ -6,7 +6,7 @@ import java.util.Set;
 import org.xvolks.jnative.exceptions.NativeException;
 
 /**
- * @author zhengwuzhi µ÷ÓÃDLL¶ÔÓ¦·½·¨µÄÀı×Ó µ÷ÓÃDLLÊ¹ÓÃjnative.jarÊµÏÖ
+ * @author zhengwuzhi è°ƒç”¨DLLå¯¹åº”æ–¹æ³•çš„ä¾‹å­ è°ƒç”¨DLLä½¿ç”¨jnative.jarå®ç°
  * 
  */
 public class EpcSDKMain {
@@ -22,64 +22,64 @@ public class EpcSDKMain {
 			EpcSDKDll epc = new EpcSDKDll();
 			result = epc.openComm(4);
 			if (result != -1) {
-				System.out.println("¶Ë¿Ú´ò¿ª³É¹¦£¡ ´®ºÅ=" + result);
+				System.out.println("ç«¯å£æ‰“å¼€æˆåŠŸï¼ ä¸²å·=" + result);
 			} else {
-				System.out.println("¶Ë¿Ú´ò¿ªÊ§°Ü£¡");
+				System.out.println("ç«¯å£æ‰“å¼€å¤±è´¥ï¼");
 			}
 
-			/*************************** Ê¹¶Á¿¨Æ÷»Ö¸´¶ÁÈ¡±êÇ©£¨¸´Î»¶ÁÍ·£© ************************/
+			/*************************** ä½¿è¯»å¡å™¨æ¢å¤è¯»å–æ ‡ç­¾ï¼ˆå¤ä½è¯»å¤´ï¼‰ ************************/
 			result = epc.resumeReading(0);
 			if (result == 1) {
-				System.out.println("¶ÁÍ·¸´Î» ³É¹¦£¡ ");
+				System.out.println("è¯»å¤´å¤ä½ æˆåŠŸï¼ ");
 			} else {
-				System.out.println("¶ÁÍ·¸´Î» Ê§°Ü£¡");
+				System.out.println("è¯»å¤´å¤ä½ å¤±è´¥ï¼");
 			}
 //
 //			String words = "ABAB";
 //			result = epc.fastWriteTag(1,2,1, words, 0);
 //			System.out.println("fastWriteTag:"+result);
-			// Ïò±êÇ©Ğ´Èë1¸ö×Ö£¨2×Ö½Ú£©µÄÄÚÈİ******
+			// å‘æ ‡ç­¾å†™å…¥1ä¸ªå­—ï¼ˆ2å­—èŠ‚ï¼‰çš„å†…å®¹******
 			// String singleWord = "1122";
 			// result = epc.writeTagSingleWord(1, 2, singleWord, 0);
 			// result = writeWords(epc, "7890EEFF3344");
 
-			// /*************************** ¶Á±êÇ©ÄÚÈİ ***************************/
+			// /*************************** è¯»æ ‡ç­¾å†…å®¹ ***************************/
 			// String readWord = epc.readTag(1, 2, 6, 0);
 			// if ("-1".equals(readWord)) {
-			// System.out.println("¶Á±êÇ©ÄÚÈİÊ§°Ü£¡");
+			// System.out.println("è¯»æ ‡ç­¾å†…å®¹å¤±è´¥ï¼");
 			// } else {
-			// System.out.println("¶Á±êÇ©ÄÚÈİ³É¹¦£¬±êÇ©ÄÚÈİ£º" + readWord);
+			// System.out.println("è¯»æ ‡ç­¾å†…å®¹æˆåŠŸï¼Œæ ‡ç­¾å†…å®¹ï¼š" + readWord);
 			// }
 
-			// // Ê¶±ğµ¥¸ö±êÇ©***
+			// // è¯†åˆ«å•ä¸ªæ ‡ç­¾***
 			// HashMap<String, String> singleTagMap = epc.identifySingleTag(0);
 			// if (singleTagMap != null) {
-			// System.out.println("Ê¶±ğµ¥¸ö±êÇ©³É¹¦!±êÇ©IDÊı¾İ£º"
-			// + singleTagMap.get("tagID").toString() + "  ÌìÏßºÅµÄ±äÁ¿µØÖ·:"
+			// System.out.println("è¯†åˆ«å•ä¸ªæ ‡ç­¾æˆåŠŸ!æ ‡ç­¾IDæ•°æ®ï¼š"
+			// + singleTagMap.get("tagID").toString() + "  å¤©çº¿å·çš„å˜é‡åœ°å€:"
 			// + singleTagMap.get("antennaNo").toString());
 			// } else {
-			// System.out.println("Ê¶±ğµ¥¸ö±êÇ©Ê§°Ü!");
+			// System.out.println("è¯†åˆ«å•ä¸ªæ ‡ç­¾å¤±è´¥!");
 			// }
 
-			// Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄµ¥¸ö±êÇ©£¨²âÊÔ³É¹¦£¬Ä£Ê½±ØĞëÉèÖÃÎª£¢¶¨Ê±Ä£Ê½£¢»ò£¢´¥·¢Ä£Ê½£¢·½¿É¶ÁÈ¡³É¹¦£®£©*
+			// è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å•ä¸ªæ ‡ç­¾ï¼ˆæµ‹è¯•æˆåŠŸï¼Œæ¨¡å¼å¿…é¡»è®¾ç½®ä¸ºï¼‚å®šæ—¶æ¨¡å¼ï¼‚æˆ–ï¼‚è§¦å‘æ¨¡å¼ï¼‚æ–¹å¯è¯»å–æˆåŠŸï¼ï¼‰*
 			// HashMap<String, String> uploadedSingleTagMap = epc
 			// .identifyUploadedSingleTag();
 			// if (uploadedSingleTagMap != null) {
-			// System.out.println("Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄµ¥¸ö±êÇ©³É¹¦!±êÇ©IDÊı¾İ£º"
+			// System.out.println("è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å•ä¸ªæ ‡ç­¾æˆåŠŸ!æ ‡ç­¾IDæ•°æ®ï¼š"
 			// + uploadedSingleTagMap.get("tagID").toString()
-			// + "   Éè±¸ºÅµÄ±äÁ¿µØÖ·:"
+			// + "   è®¾å¤‡å·çš„å˜é‡åœ°å€:"
 			// + uploadedSingleTagMap.get("devNo").toString()
-			// + "  ÌìÏßºÅµÄ±äÁ¿µØÖ·:"
+			// + "  å¤©çº¿å·çš„å˜é‡åœ°å€:"
 			// + uploadedSingleTagMap.get("antennaNo").toString());
 			// } else {
-			// System.out.println("Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄµ¥¸ö±êÇ©Ê§°Ü!");
+			// System.out.println("è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å•ä¸ªæ ‡ç­¾å¤±è´¥!");
 			// }
 			//
-			// // Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄ¶à¸ö±êÇ©£¨²âÊÔ³É¹¦£¬Ä£Ê½±ØĞëÉèÖÃÎª£¢¶¨Ê±Ä£Ê½£¢»ò£¢´¥·¢Ä£Ê½£¢·½¿É¶ÁÈ¡³É¹¦£®£©
+			// // è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å¤šä¸ªæ ‡ç­¾ï¼ˆæµ‹è¯•æˆåŠŸï¼Œæ¨¡å¼å¿…é¡»è®¾ç½®ä¸ºï¼‚å®šæ—¶æ¨¡å¼ï¼‚æˆ–ï¼‚è§¦å‘æ¨¡å¼ï¼‚æ–¹å¯è¯»å–æˆåŠŸï¼ï¼‰
 
 //			result = epc.writeByEpcID(1, 2, 2, "E20093666616027518205BDB",
 //					"DDEE00FF", 0);
-//			System.out.println("result£º" + result);
+//			System.out.println("resultï¼š" + result);
 
 			HashMap<String, Object> identifyUploadedMultiTagsMap = epc
 					.identifyUploadedMultiTags();
@@ -92,27 +92,27 @@ public class EpcSDKMain {
 				for (String tagId : tagIds) {
 					tagIdStr += tagId + ",";
 				}
-				System.out.println("Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄ¶à¸ö±êÇ©³É¹¦!±êÇ©µØÖ·ÊıÁ¿£º"
+				System.out.println("è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å¤šä¸ªæ ‡ç­¾æˆåŠŸ!æ ‡ç­¾åœ°å€æ•°é‡ï¼š"
 						+ identifyUploadedMultiTagsMap.get("tagNum").toString()
-						+ "  \n\t±êÇ©IDÊı¾İÊı×é£º"
+						+ "  \n\tæ ‡ç­¾IDæ•°æ®æ•°ç»„ï¼š"
 						+ tagIdStr
-						+ "  \n\tÉè±¸ºÅµÄ±äÁ¿µØÖ·:"
+						+ "  \n\tè®¾å¤‡å·çš„å˜é‡åœ°å€:"
 						+ identifyUploadedMultiTagsMap.get("devNos").toString()
-						+ "  \n\tÌìÏßºÅµÄ±äÁ¿µØÖ·:"
+						+ "  \n\tå¤©çº¿å·çš„å˜é‡åœ°å€:"
 						+ identifyUploadedMultiTagsMap.get("antennaNos")
 								.toString());
 			} else {
-				System.out.println("Ê¶±ğ¶Á¿¨Æ÷ÉÏ´«µÄ¶à¸ö±êÇ©Ê§°Ü!");
+				System.out.println("è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å¤šä¸ªæ ‡ç­¾å¤±è´¥!");
 			}
 
-			/*************************** Ê¹¶Á¿¨Æ÷Í£Ö¹¶ÁÈ¡±êÇ©(µÚÒ»¸ö¶ÁÍ·Í£Ö¹¶ÁÈ¡) ***************************/
+			/*************************** ä½¿è¯»å¡å™¨åœæ­¢è¯»å–æ ‡ç­¾(ç¬¬ä¸€ä¸ªè¯»å¤´åœæ­¢è¯»å–) ***************************/
 			result = epc.stopReading(0);
 			if (result == 1) {
-				System.out.println("¶Á¿¨Æ÷Í£Ö¹¶ÁÈ¡ ³É¹¦");
+				System.out.println("è¯»å¡å™¨åœæ­¢è¯»å– æˆåŠŸ");
 			} else {
-				System.out.println("¶Á¿¨Æ÷Í£Ö¹¶ÁÈ¡ Ê§°Ü");
+				System.out.println("è¯»å¡å™¨åœæ­¢è¯»å– å¤±è´¥");
 			}
-			// ¹Ø±Õ´®¿Ú
+			// å…³é—­ä¸²å£
 			 epc.closeComm();
 		} catch (NativeException e) {
 			e.printStackTrace();
@@ -122,27 +122,27 @@ public class EpcSDKMain {
 		}
 	}
 
-	// ¿ìĞ´±êÇ©ID²Ù×÷
+	// å¿«å†™æ ‡ç­¾IDæ“ä½œ
 	public static int writeWords(EpcSDKDll epc, String words)
 			throws NativeException, IllegalAccessException {
 		int result = 0;
-		// ÅĞ¶Ï×Ö·û´®Îª16½øÖÆ×Ö·û´®²ÅÖ´ĞĞĞ´Èë²Ù×÷£®
+		// åˆ¤æ–­å­—ç¬¦ä¸²ä¸º16è¿›åˆ¶å­—ç¬¦ä¸²æ‰æ‰§è¡Œå†™å…¥æ“ä½œï¼
 		if (EpcSDKDll.matcherStringIsHex(words)) {
 			int hexLength = words.length();
-			// ¸ù¾İ¿ìĞ´±êÇ©µÄ×Ö½Ú³¤¶ÈÒªÇó£¬¿ØÖÆ16½øÖÆ×Ö½Ú³¤¶È±ØĞëÎª4£¬8£¬12£¬16£¬20£¬»ò24³¤¶È²Å¿ÉĞ´Èë£®Èç¹û²»°´³¤¶ÈĞ´Èë£¬È±ÉÙµÄ×Ö½Ú×Ô¶¯ÒÔ0²¹³ä£®
+			// æ ¹æ®å¿«å†™æ ‡ç­¾çš„å­—èŠ‚é•¿åº¦è¦æ±‚ï¼Œæ§åˆ¶16è¿›åˆ¶å­—èŠ‚é•¿åº¦å¿…é¡»ä¸º4ï¼Œ8ï¼Œ12ï¼Œ16ï¼Œ20ï¼Œæˆ–24é•¿åº¦æ‰å¯å†™å…¥ï¼å¦‚æœä¸æŒ‰é•¿åº¦å†™å…¥ï¼Œç¼ºå°‘çš„å­—èŠ‚è‡ªåŠ¨ä»¥0è¡¥å……ï¼
 			if (hexLength < 25 && hexLength > 3 && hexLength % 4 == 0) {
-				int bytesNum = (int) Math.ceil((double) hexLength / 2); // ×Ö·û³¤¶È³ı2£¬È»ºó´ÕÕû£»
+				int bytesNum = (int) Math.ceil((double) hexLength / 2); // å­—ç¬¦é•¿åº¦é™¤2ï¼Œç„¶åå‡‘æ•´ï¼›
 				result = epc.fastWriteTagID(bytesNum, words, 0);
 				if (result == 1) {
-					System.out.println("¿ìĞ´±êÇ©Ğ´Èë16½øÖÆÊı¾İ[" + words + "]³É¹¦!");
+					System.out.println("å¿«å†™æ ‡ç­¾å†™å…¥16è¿›åˆ¶æ•°æ®[" + words + "]æˆåŠŸ!");
 				} else {
-					System.out.println("¿ìĞ´±êÇ©Ğ´Èë Ê§°Ü");
+					System.out.println("å¿«å†™æ ‡ç­¾å†™å…¥ å¤±è´¥");
 				}
 			} else {
-				System.out.println("Ğ´Èë16½øÖÆ×Ö·û³¤¶È²»ÕıÈ·£¬³¤¶È±ØĞëÎª4£¬8£¬12£¬16£¬20£¬»ò24¸ö×Ö·û£¡");
+				System.out.println("å†™å…¥16è¿›åˆ¶å­—ç¬¦é•¿åº¦ä¸æ­£ç¡®ï¼Œé•¿åº¦å¿…é¡»ä¸º4ï¼Œ8ï¼Œ12ï¼Œ16ï¼Œ20ï¼Œæˆ–24ä¸ªå­—ç¬¦ï¼");
 			}
 		} else {
-			System.out.println("ÊäÈë×Ö·ûÎŞĞ§£¬ÇëÊäÈëÕıÈ·16½øÖÆ×Ö·û£¡");
+			System.out.println("è¾“å…¥å­—ç¬¦æ— æ•ˆï¼Œè¯·è¾“å…¥æ­£ç¡®16è¿›åˆ¶å­—ç¬¦ï¼");
 		}
 		return result;
 	}

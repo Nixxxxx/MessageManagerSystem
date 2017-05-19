@@ -227,7 +227,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * Êó±êµã»÷ÊÂ¼ş
+	 * é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 */
 	protected void bookTableMousePress() {
 		int row=table.getSelectedRow();
@@ -237,15 +237,15 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	
 
 	/**
-	 * »¹ÊéÊÂ¼ş´¦Àí
+	 * è¿˜ä¹¦äº‹ä»¶å¤„ç†
 	 */
 	private void bookReturn() {
 		if(StringUtil.isEmpty(studentIdTxt.getText())){
-			JOptionPane.showMessageDialog(null,"Ñ§ÉúÑ§ºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å­¦ç”Ÿå­¦å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(bookIdTxt.getText())){
-			JOptionPane.showMessageDialog(null,"Í¼Êé±àºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç¼–å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		
@@ -255,42 +255,42 @@ public class BookBorrowInterFrame extends JInternalFrame {
 			con=dbUtil.getCon();
 			int result=new BookDao().bookConditions(con,book);
 			if(result==-1){
-				JOptionPane.showMessageDialog(null,"Í¼Êé²»´æÔÚ£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä¸å­˜åœ¨ï¼");
 				return;
 			}else if(result==1){
-				JOptionPane.showMessageDialog(null,"Í¼ÊéÎ´½è³ö£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦æœªå€Ÿå‡ºï¼");
 				return;
 			}else{
 				result=new BookDao().bookBorrower(con, book);
 				if(result==-1){
-					JOptionPane.showMessageDialog(null,"Í¼Êé±àºÅºÍÑ§Éú±àºÅ²»Æ¥Åä£¡");
+					JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç¼–å·å’Œå­¦ç”Ÿç¼–å·ä¸åŒ¹é…ï¼");
 					return;
 				}
 				result=new BookDao().bookReturn(con,book);
 				if(result==1){
-					JOptionPane.showMessageDialog(null,"»¹Êé³É¹¦£¡");
+					JOptionPane.showMessageDialog(null,"è¿˜ä¹¦æˆåŠŸï¼");
 					reset();
 				}else {
-					JOptionPane.showMessageDialog(null,"»¹ÊéÊ§°Ü£¡");
+					JOptionPane.showMessageDialog(null,"è¿˜ä¹¦å¤±è´¥ï¼");
 					return;
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"»¹ÊéÊ§°Ü£¡");
+			JOptionPane.showMessageDialog(null,"è¿˜ä¹¦å¤±è´¥ï¼");
 		}
 	}
 
 	/**
-	 * ½èÊéÊÂ¼ş´¦Àí
+	 * å€Ÿä¹¦äº‹ä»¶å¤„ç†
 	 */
 	private void bookBorrow() {
 		if(StringUtil.isEmpty(studentIdTxt.getText())){
-			JOptionPane.showMessageDialog(null,"Ñ§ÉúÑ§ºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å­¦ç”Ÿå­¦å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(bookIdTxt.getText())){
-			JOptionPane.showMessageDialog(null,"Í¼Êé±àºÅ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç¼–å·ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		
@@ -300,30 +300,30 @@ public class BookBorrowInterFrame extends JInternalFrame {
 			con=dbUtil.getCon();
 			int result=new BookDao().bookConditions(con,book);
 			if(result==-1){
-				JOptionPane.showMessageDialog(null,"Í¼Êé²»´æÔÚ£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä¸å­˜åœ¨ï¼");
 				return;
 			}else if(result==0){
-				JOptionPane.showMessageDialog(null,"Í¼ÊéÒÑ½è³ö£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦å·²å€Ÿå‡ºï¼");
 				return;
 			}else{
 				result=new BookDao().bookBorrow(con,book);
 				if(result==1){
-					JOptionPane.showMessageDialog(null,"½èÊé³É¹¦£¡");
+					JOptionPane.showMessageDialog(null,"å€Ÿä¹¦æˆåŠŸï¼");
 					reset();
 				}else {
-					JOptionPane.showMessageDialog(null,"½èÊéÊ§°Ü£¡");
+					JOptionPane.showMessageDialog(null,"å€Ÿä¹¦å¤±è´¥ï¼");
 					return;
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"½èÊéÊ§°Ü£¡");
+			JOptionPane.showMessageDialog(null,"å€Ÿä¹¦å¤±è´¥ï¼");
 		}
 		
 	}
 
 	/**
-	 * ¶ÁĞ´Æ÷¿ª¹Ø
+	 * è¯»å†™å™¨å¼€å…³
 	 * @throws NativeException 
 	 * @throws IllegalAccessException 
 	 */
@@ -334,17 +334,17 @@ public class BookBorrowInterFrame extends JInternalFrame {
 			if(result!=-1){
 				comm=true;
 			}else {
-				JOptionPane.showMessageDialog(null,"´ò¿ª¶Ë¿ÚÊ§°Ü£¡");
+				JOptionPane.showMessageDialog(null,"æ‰“å¼€ç«¯å£å¤±è´¥ï¼");
 				return;
 			}
 		}
 		if(!readerSwitch){
 			if(type.equals("0")){
-				switchButton0.setIcon(new ImageIcon(BookBorrowInterFrame.class.getResource("/images/¿ª¹Ø.png")));
+				switchButton0.setIcon(new ImageIcon(BookBorrowInterFrame.class.getResource("/images/å¼€å…³.png")));
 				readerSwitch0=true;
 			}
 			if(type.equals("1")){
-				switchButton1.setIcon(new ImageIcon(BookBorrowInterFrame.class.getResource("/images/¿ª¹Ø.png")));
+				switchButton1.setIcon(new ImageIcon(BookBorrowInterFrame.class.getResource("/images/å¼€å…³.png")));
 				readerSwitch1=true;
 			} 
 			timerSingleLabel=new Timer();
@@ -365,7 +365,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ÑÓÊ±º¯Êı
+	 * å»¶æ—¶å‡½æ•°
 	 * @author JH
 	 *
 	 */
@@ -388,7 +388,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ½èÔÄ¼ÇÂ¼ÏÔÊ¾
+	 * å€Ÿé˜…è®°å½•æ˜¾ç¤º
 	 */
 	private void record(){
 		DefaultTableModel dtm=(DefaultTableModel) table.getModel(); 
@@ -412,7 +412,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	
 
 	/**
-	 * Ê¶±ğµ¥¸ö±êÇ©
+	 * è¯†åˆ«å•ä¸ªæ ‡ç­¾
 	 * @throws NativeException 
 	 * @throws IllegalAccessException 
 	 */
@@ -428,14 +428,14 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * Í¼Êé±àºÅÇå³ı
+	 * å›¾ä¹¦ç¼–å·æ¸…é™¤
 	 */
 	protected void clearButton1() {
 		bookIdTxt.setText("");
 	}
 
 	/**
-	 * Ñ§ÉúÑ§ºÅÇå³ı
+	 * å­¦ç”Ÿå­¦å·æ¸…é™¤
 	 */
 	protected void clearButton0() {
 		studentIdTxt.setText("");
@@ -444,7 +444,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * COM¿ÚÏÂÀ­¿ò
+	 * COMå£ä¸‹æ‹‰æ¡†
 	 */
 	public void comList(JComboBox jComboBox){
 		jComboBox.addItem("COM1");
@@ -454,7 +454,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * COM¿ÚÑ¡Ôñ
+	 * COMå£é€‰æ‹©
 	 */
 	public int comSelect(JComboBox jcomboBox){
 		String com=(String) jcomboBox.getSelectedItem();
@@ -463,7 +463,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 	}
 	
 	/**
-	 * ÖØÖÃ½çÃæ
+	 * é‡ç½®ç•Œé¢
 	 */
 	private void reset(){
 		studentIdTxt.setText("");
@@ -473,7 +473,7 @@ public class BookBorrowInterFrame extends JInternalFrame {
 		timerSingleLabel.schedule(new MyTaskSingleLabel(), 1000, 1000);
 	}
 	/**
-	 * ¶¯Ì¬Ê±¼äÏÔÊ¾
+	 * åŠ¨æ€æ—¶é—´æ˜¾ç¤º
 	 */
 	private void timeDisplay(){
 			date=new Date();

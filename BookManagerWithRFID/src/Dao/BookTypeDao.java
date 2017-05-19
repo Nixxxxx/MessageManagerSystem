@@ -10,7 +10,7 @@ import Model.BookType;
 public class BookTypeDao {
 
 	/**
-	 * Í¼ÊéÀàĞÍÌí¼Ó
+	 * å›¾ä¹¦ç±»å‹æ·»åŠ 
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -25,7 +25,7 @@ public class BookTypeDao {
 	}
 	
 	/**
-	 * Í¼ÊéÀàĞÍ²éÑ¯
+	 * å›¾ä¹¦ç±»å‹æŸ¥è¯¢
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -45,7 +45,7 @@ public class BookTypeDao {
 	}
 	
 	/**
-	 * Í¼ÊéÀàĞÍĞŞ¸Ä
+	 * å›¾ä¹¦ç±»å‹ä¿®æ”¹
 	 */
 	public static  int update(Connection con,BookType bookType) throws SQLException{
 		int result=isRepeat(con,bookType);
@@ -59,7 +59,7 @@ public class BookTypeDao {
 	}
 	
 	/**
-	 * ¼ì²éÍ¼ÊéÀàĞÍÃû³ÆÊÇ·ñ´æÔÚ
+	 * æ£€æŸ¥å›¾ä¹¦ç±»å‹åç§°æ˜¯å¦å­˜åœ¨
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -84,7 +84,7 @@ public class BookTypeDao {
 		return 0;
 	}
 	/**
-	 * ¼ì²é´ËÍ¼ÊéÀàĞÍÊÇ·ñº¬ÓĞÊé
+	 * æ£€æŸ¥æ­¤å›¾ä¹¦ç±»å‹æ˜¯å¦å«æœ‰ä¹¦
 	 * @param con
 	 * @param bookType
 	 * @return
@@ -99,7 +99,7 @@ public class BookTypeDao {
 	}
 	
 	/**
-	 * Í¼ÊéÀàĞÍÉ¾³ı
+	 * å›¾ä¹¦ç±»å‹åˆ é™¤
 	 * @param con
 	 * @param bookType
 	 * @return

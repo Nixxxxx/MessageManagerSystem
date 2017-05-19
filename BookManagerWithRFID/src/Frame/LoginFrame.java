@@ -63,7 +63,7 @@ public class LoginFrame extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("\u56FE\u4E66\u7BA1\u7406\u7CFB\u7EDF");
-		lblNewLabel.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 26));
+		lblNewLabel.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 26));
 		lblNewLabel.setIcon(new ImageIcon(LoginFrame.class.getResource("/images/logo.png")));
 		
 		JLabel lblNewLabel_1 = new JLabel("\u7528\u6237\u540D\uFF1A");
@@ -139,14 +139,14 @@ public class LoginFrame extends JFrame {
 	}
 
 	/**
-	 * µÇÂ¼ÊÂ¼ş
+	 * ç™»å½•äº‹ä»¶
 	 * @param e
 	 */
 	protected void login(ActionEvent e) {
 		String username=usernameTxt.getText();
 		String password=new String(passwordTxt.getPassword());
 		if(StringUtil.isEmpty(username)||StringUtil.isEmpty(password)){
-			JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"ç”¨æˆ·åæˆ–å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 		}
 		else{
 			User user=new User(username,password);
@@ -155,7 +155,7 @@ public class LoginFrame extends JFrame {
 				con=dbUtil.getCon();
 				User resultUtil=userDao.login(con,user);
 				if(resultUtil==null) 
-					JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					JOptionPane.showMessageDialog(null,"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 				else {
 					dispose();
 					new MainFrame().setVisible(true);
@@ -175,7 +175,7 @@ public class LoginFrame extends JFrame {
 	}
 
 	/**
-	 * ÖØÖÃÊÂ¼ş
+	 * é‡ç½®äº‹ä»¶
 	 * @param evt
 	 */
 	private void resetValue(ActionEvent evt) {

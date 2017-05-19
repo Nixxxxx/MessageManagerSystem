@@ -13,7 +13,7 @@ import org.xvolks.jnative.pointers.Pointer;
 import org.xvolks.jnative.pointers.memory.HeapMemoryBlock;
 
 /**
- * @author zhengwuzhi µ÷ÓÃDLLÊ¹ÓÃjnative.jarÊµÏÖ
+ * @author zhengwuzhi è°ƒç”¨DLLä½¿ç”¨jnative.jarå®žçŽ°
  * 
  */
 public class EpcSDKDll {
@@ -21,7 +21,7 @@ public class EpcSDKDll {
 	public int com;
 
 	/**
-	 * °Ñ×Ö½ÚÊý×é×ª»»³É16½øÖÆ×Ö·û´®
+	 * æŠŠå­—èŠ‚æ•°ç»„è½¬æ¢æˆ16è¿›åˆ¶å­—ç¬¦ä¸²
 	 * 
 	 * @param bArray
 	 * @return
@@ -39,7 +39,7 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * °Ñ16½øÖÆ×Ö·û´®×ª»»³É×Ö½ÚÊý×é£¨×Ô¶¯°Ñ×Ö·û´®×ª»»Îª´óÐ´£©
+	 * æŠŠ16è¿›åˆ¶å­—ç¬¦ä¸²è½¬æ¢æˆå­—èŠ‚æ•°ç»„ï¼ˆè‡ªåŠ¨æŠŠå­—ç¬¦ä¸²è½¬æ¢ä¸ºå¤§å†™ï¼‰
 	 * 
 	 * @param hex
 	 * @return
@@ -62,10 +62,10 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * ÑéÖ¤×Ö·û´®ÊÇ·ñ16½øÖÆ
+	 * éªŒè¯å­—ç¬¦ä¸²æ˜¯å¦16è¿›åˆ¶
 	 * 
 	 * @param hex
-	 *            16½øÖÆ×Ö·û´®
+	 *            16è¿›åˆ¶å­—ç¬¦ä¸²
 	 * @return
 	 */
 	public static boolean matcherStringIsHex(String hex) {
@@ -75,7 +75,7 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º HANDLE OpenComm(int readAddr); ¹¦ÄÜËµÃ÷£º ´ò¿ª´®¿Ú¡£
+	 * å‡½æ•°åŽŸåž‹ï¼š HANDLE OpenComm(int readAddr); åŠŸèƒ½è¯´æ˜Žï¼š æ‰“å¼€ä¸²å£ã€‚
 	 * 
 	 * @param readAddr
 	 * @return
@@ -92,7 +92,7 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º void CloseComm(HANDLE hCom); ¹¦ÄÜËµÃ÷£º ¹Ø±Õ´®¿Ú¡£
+	 * å‡½æ•°åŽŸåž‹ï¼š void CloseComm(HANDLE hCom); åŠŸèƒ½è¯´æ˜Žï¼š å…³é—­ä¸²å£ã€‚
 	 * 
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -104,13 +104,13 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL StopReading(HANDLE hCom ,BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º Ê¹¶Á¿¨Æ÷Í£Ö¹¶ÁÈ¡±êÇ©¡£
-	 * ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL StopReading(HANDLE hCom ,BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š ä½¿è¯»å¡å™¨åœæ­¢è¯»å–æ ‡ç­¾ã€‚
+	 * è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param Port
-	 *            ´®¿Ú¾ä±ú
+	 *            ä¸²å£å¥æŸ„
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -127,11 +127,11 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL ResumeReading(HANDLE hCom,BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º
-	 * Ê¹¶Á¿¨Æ÷»Ö¸´¶ÁÈ¡±êÇ©£¨¸´Î»¶ÁÍ·£©¡£ ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL ResumeReading(HANDLE hCom,BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š
+	 * ä½¿è¯»å¡å™¨æ¢å¤è¯»å–æ ‡ç­¾ï¼ˆå¤ä½è¯»å¤´ï¼‰ã€‚ è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -148,12 +148,12 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL IdentifySingleTag(HANDLE hCom, BYTE* tagID, BYTE*
-	 * antennaNo£¬BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º Ê¶±ðµ¥¸ö±êÇ©¡£ ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL IdentifySingleTag(HANDLE hCom, BYTE* tagID, BYTE*
+	 * antennaNoï¼ŒBYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š è¯†åˆ«å•ä¸ªæ ‡ç­¾ã€‚ è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param readAddr
-	 * @return ·µ»ØHashMasp¶ÔÏó£¬°üº¬Á½¸ö²ÎÊý¡¡ tagID£º ½ÓÊÕ±êÇ©IDµÄÊý×éµØÖ·£¨Êä³ö²ÎÊý£©£¬³¤¶ÈÎª12 antennaNo£º
-	 *         ½ÓÊÕÌìÏßºÅµÄ±äÁ¿µØÖ·£¨Êä³ö²ÎÊý£©¡£²»ÐèÒªÊ±ÖÃÎªNULL¡£
+	 * @return è¿”å›žHashMaspå¯¹è±¡ï¼ŒåŒ…å«ä¸¤ä¸ªå‚æ•°ã€€ tagIDï¼š æŽ¥æ”¶æ ‡ç­¾IDçš„æ•°ç»„åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ï¼Œé•¿åº¦ä¸º12 antennaNoï¼š
+	 *         æŽ¥æ”¶å¤©çº¿å·çš„å˜é‡åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚ä¸éœ€è¦æ—¶ç½®ä¸ºNULLã€‚
 	 * @throws NativeException
 	 * @throws IllegalAccessException
 	 */
@@ -181,13 +181,13 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * ²âÊÔ³É¹¦£¬Ä£Ê½±ØÐëÉèÖÃÎª£¢¶¨Ê±Ä£Ê½£¢»ò£¢´¥·¢Ä£Ê½£¢·½¿É¶ÁÈ¡³É¹¦£® º¯ÊýÔ­ÐÍ£º BOOL
+	 * æµ‹è¯•æˆåŠŸï¼Œæ¨¡å¼å¿…é¡»è®¾ç½®ä¸ºï¼‚å®šæ—¶æ¨¡å¼ï¼‚æˆ–ï¼‚è§¦å‘æ¨¡å¼ï¼‚æ–¹å¯è¯»å–æˆåŠŸï¼Ž å‡½æ•°åŽŸåž‹ï¼š BOOL
 	 * IdentifyUploadedSingleTag(HANDLE hCom, BYTE* tagID, BYTE* devNo=NULL,
-	 * BYTE* antennaNo); ¹¦ÄÜËµÃ÷£º Ê¶±ð¶Á¿¨Æ÷ÉÏ´«µÄµ¥¸ö±êÇ©¡£ ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * BYTE* antennaNo); åŠŸèƒ½è¯´æ˜Žï¼š è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å•ä¸ªæ ‡ç­¾ã€‚ è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
-	 * @return ·µ»ØÖµ tagID£º ½ÓÊÕ±êÇ©IDµÄÊý×éµØÖ·£¨Êä³ö²ÎÊý£©£¬³¤¶ÈÎª12 devNo£º
-	 *         ½ÓÊÕÉè±¸ºÅµÄ±äÁ¿µØÖ·£¨Êä³ö²ÎÊý£©¡£²»ÐèÒªÊ±ÖÃÎªNULL¡£ antennaNo£º
-	 *         ½ÓÊÕÌìÏßºÅµÄ±äÁ¿µØÖ·£¨Êä³ö²ÎÊý£©¡£²»ÐèÒªÊ±ÖÃÎªNULL¡£
+	 * @return è¿”å›žå€¼ tagIDï¼š æŽ¥æ”¶æ ‡ç­¾IDçš„æ•°ç»„åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ï¼Œé•¿åº¦ä¸º12 devNoï¼š
+	 *         æŽ¥æ”¶è®¾å¤‡å·çš„å˜é‡åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚ä¸éœ€è¦æ—¶ç½®ä¸ºNULLã€‚ antennaNoï¼š
+	 *         æŽ¥æ”¶å¤©çº¿å·çš„å˜é‡åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚ä¸éœ€è¦æ—¶ç½®ä¸ºNULLã€‚
 	 * @throws NativeException
 	 * @throws IllegalAccessException
 	 */
@@ -218,19 +218,19 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * ²âÊÔ³É¹¦£¬Ä£Ê½±ØÐëÉèÖÃÎª£¢¶¨Ê±Ä£Ê½£¢»ò£¢´¥·¢Ä£Ê½£¢·½¿É¶ÁÈ¡³É¹¦£® º¯ÊýÔ­ÐÍ£º BOOL
+	 * æµ‹è¯•æˆåŠŸï¼Œæ¨¡å¼å¿…é¡»è®¾ç½®ä¸ºï¼‚å®šæ—¶æ¨¡å¼ï¼‚æˆ–ï¼‚è§¦å‘æ¨¡å¼ï¼‚æ–¹å¯è¯»å–æˆåŠŸï¼Ž å‡½æ•°åŽŸåž‹ï¼š BOOL
 	 * IdentifyUploadedMultiTags(HANDLE hCom, BYTE* tagNum, BYTE* tagIDs, BYTE*
-	 * devNos=NULL, BYTE* antennaNos); ¹¦ÄÜËµÃ÷£º Ê¶±ð¶Á¿¨Æ÷ÉÏ´«µÄ¶à¸ö±êÇ©¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * devNos=NULL, BYTE* antennaNos); åŠŸèƒ½è¯´æ˜Žï¼š è¯†åˆ«è¯»å¡å™¨ä¸Šä¼ çš„å¤šä¸ªæ ‡ç­¾ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
-	 * @return ·µ»ØÖµ£º tagNum£º ½ÓÊÕ±êÇ©ÊýµÄ±äÁ¿µØÖ·£¨Êä³ö²ÎÊý£©¡£Ò»´Î¿ÉÄÜ¶ÁÈ¡µÄ×î´ó±êÇ©ÊýÊÇ200¡£ ÒÑ×ª»»Îª10½øÖÆÊý tagIDs£º
-	 *         ½ÓÊÕ±êÇ©IDµÄÊý×éµØÖ·£¨Êä³ö²ÎÊý£©£¬³¤¶ÈÎª12 * tagNum ·µ»Ø×Ö·û´®Êý×é devNos£º
-	 *         ½ÓÊÕÉè±¸ºÅµÄÊý×éµØÖ·£¨Êä³ö²ÎÊý£©¡£³¤¶ÈÎª1 * tagNum£¬²»ÐèÒªÊ±ÖÃÎªNULL¡£ antennaNos£º
-	 *         ½ÓÊÕÌìÏßºÅµÄÊý×éµØÖ·£¨Êä³ö²ÎÊý£©¡£³¤¶ÈÎª1 * tagNum£¬²»ÐèÒªÊ±ÖÃÎªNULL¡£ ¼ÙÉè¶Áµ½10¸ö±êÇ©Ê±£º
-	 *         *tagNumµÄÖµÎª10£»
-	 *         tagIDs[0~11]¡¢tagIDs[12~23]¡­¡­¡¢tagIDs[108~119]·Ö±ðÎªµÚ1¸ö¡¢µÚ2¸ö
-	 *         ¡­¡­µÚ10¸ö±êÇ©µÄID£» devNos[0]¡¢devNos[1]¡­¡­devNos[9]·Ö±ðÎªµÚ1¸ö¡¢µÚ2¸ö¡­¡­µÚ10±êÇ©µÄÉè±¸ºÅ£»
-	 *         antennaNos[0]¡¢antennaNos[1]¡­¡­antennaNos[9]ÎªµÚ1¸ö¡¢µÚ2¸ö¡­¡­µÚ10¸ö±êÇ©µÄÌìÏßºÅ£»
+	 * @return è¿”å›žå€¼ï¼š tagNumï¼š æŽ¥æ”¶æ ‡ç­¾æ•°çš„å˜é‡åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚ä¸€æ¬¡å¯èƒ½è¯»å–çš„æœ€å¤§æ ‡ç­¾æ•°æ˜¯200ã€‚ å·²è½¬æ¢ä¸º10è¿›åˆ¶æ•° tagIDsï¼š
+	 *         æŽ¥æ”¶æ ‡ç­¾IDçš„æ•°ç»„åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ï¼Œé•¿åº¦ä¸º12 * tagNum è¿”å›žå­—ç¬¦ä¸²æ•°ç»„ devNosï¼š
+	 *         æŽ¥æ”¶è®¾å¤‡å·çš„æ•°ç»„åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚é•¿åº¦ä¸º1 * tagNumï¼Œä¸éœ€è¦æ—¶ç½®ä¸ºNULLã€‚ antennaNosï¼š
+	 *         æŽ¥æ”¶å¤©çº¿å·çš„æ•°ç»„åœ°å€ï¼ˆè¾“å‡ºå‚æ•°ï¼‰ã€‚é•¿åº¦ä¸º1 * tagNumï¼Œä¸éœ€è¦æ—¶ç½®ä¸ºNULLã€‚ å‡è®¾è¯»åˆ°10ä¸ªæ ‡ç­¾æ—¶ï¼š
+	 *         *tagNumçš„å€¼ä¸º10ï¼›
+	 *         tagIDs[0~11]ã€tagIDs[12~23]â€¦â€¦ã€tagIDs[108~119]åˆ†åˆ«ä¸ºç¬¬1ä¸ªã€ç¬¬2ä¸ª
+	 *         â€¦â€¦ç¬¬10ä¸ªæ ‡ç­¾çš„IDï¼› devNos[0]ã€devNos[1]â€¦â€¦devNos[9]åˆ†åˆ«ä¸ºç¬¬1ä¸ªã€ç¬¬2ä¸ªâ€¦â€¦ç¬¬10æ ‡ç­¾çš„è®¾å¤‡å·ï¼›
+	 *         antennaNos[0]ã€antennaNos[1]â€¦â€¦antennaNos[9]ä¸ºç¬¬1ä¸ªã€ç¬¬2ä¸ªâ€¦â€¦ç¬¬10ä¸ªæ ‡ç­¾çš„å¤©çº¿å·ï¼›
 	 * @throws NativeException
 	 * @throws IllegalAccessException
 	 */
@@ -270,21 +270,21 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL ReadTag(HANDLE hCom, BYTE memBank, BYTE address, BYTE length,
-	 * BYTE* data, BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º ¶Á±êÇ©ÄÚÈÝ¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL ReadTag(HANDLE hCom, BYTE memBank, BYTE address, BYTE length,
+	 * BYTE* data, BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š è¯»æ ‡ç­¾å†…å®¹ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param memBank
-	 *            Òª¶ÁµÄÇøÓò¡£¸÷ÖµµÄÒâÒåÈçÏÂ£º 0¡ª¡ª±£ÁôÇø 1¡ª¡ªEPCÇø 2¡ª¡ªTIDÇø 3¡ª¡ªÓÃ»§Çø
+	 *            è¦è¯»çš„åŒºåŸŸã€‚å„å€¼çš„æ„ä¹‰å¦‚ä¸‹ï¼š 0â€”â€”ä¿ç•™åŒº 1â€”â€”EPCåŒº 2â€”â€”TIDåŒº 3â€”â€”ç”¨æˆ·åŒº
 	 * @param address
-	 *            Òª¶ÁÇøÓòÖÐµÄµØÖ·£¬È¡ÖµÎª·¶Î§0-7¡£
+	 *            è¦è¯»åŒºåŸŸä¸­çš„åœ°å€ï¼Œå–å€¼ä¸ºèŒƒå›´0-7ã€‚
 	 * @param length
-	 *            Òª¶ÁÈ¡µÄ³¤¶È£¬È¡Öµ·¶Î§ÊÇ1µ½8£¨1Word = 2Byte =
-	 *            4Î»£©£¨ËµÃ÷£ºmemBank=EPCÇø£¬address+lengthµÄÖµ²»³¬¹ý8
-	 *            £®memBank=±£ÁôÇø£¬address+lengthµÄÖµ²»³¬¹ý4£®£©¡£
+	 *            è¦è¯»å–çš„é•¿åº¦ï¼Œå–å€¼èŒƒå›´æ˜¯1åˆ°8ï¼ˆ1Word = 2Byte =
+	 *            4ä½ï¼‰ï¼ˆè¯´æ˜Žï¼šmemBank=EPCåŒºï¼Œaddress+lengthçš„å€¼ä¸è¶…è¿‡8
+	 *            ï¼ŽmemBank=ä¿ç•™åŒºï¼Œaddress+lengthçš„å€¼ä¸è¶…è¿‡4ï¼Žï¼‰ã€‚
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
-	 * @return ³É¹¦Ê±£º·µ»Ø16½øÖÆÊýµÄ×Ö·û´® Ê§°ÜÊ±£º·µ»Ø-1
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
+	 * @return æˆåŠŸæ—¶ï¼šè¿”å›ž16è¿›åˆ¶æ•°çš„å­—ç¬¦ä¸² å¤±è´¥æ—¶ï¼šè¿”å›ž-1
 	 * @throws NativeException
 	 * @throws IllegalAccessException
 	 */
@@ -292,11 +292,11 @@ public class EpcSDKDll {
 			throws NativeException, IllegalAccessException {
 		if (memBank == 1 && (address + length > 8)) {
 			throw new NativeException(
-					"¶ÁÈ¡EPCÇøÄÚÈÝÊ±£¬address(¶ÁÇøÓòÖÐµÄµØÖ·)+length(Òª¶ÁÈ¡µÄ³¤¶È)µÄÖµ²»³¬¹ý8£®Çë¼ì²éÊäÈë²ÎÊýÖµ£¡");
+					"è¯»å–EPCåŒºå†…å®¹æ—¶ï¼Œaddress(è¯»åŒºåŸŸä¸­çš„åœ°å€)+length(è¦è¯»å–çš„é•¿åº¦)çš„å€¼ä¸è¶…è¿‡8ï¼Žè¯·æ£€æŸ¥è¾“å…¥å‚æ•°å€¼ï¼");
 		}
 		if (memBank == 0 && (address + length > 4)) {
 			throw new NativeException(
-					"¶ÁÈ¡±£ÁôÇøÄÚÈÝÊ±£¬address(¶ÁÇøÓòÖÐµÄµØÖ·)+length(Òª¶ÁÈ¡µÄ³¤¶È)µÄÖµ²»³¬¹ý4£®Çë¼ì²éÊäÈë²ÎÊýÖµ£¡");
+					"è¯»å–ä¿ç•™åŒºå†…å®¹æ—¶ï¼Œaddress(è¯»åŒºåŸŸä¸­çš„åœ°å€)+length(è¦è¯»å–çš„é•¿åº¦)çš„å€¼ä¸è¶…è¿‡4ï¼Žè¯·æ£€æŸ¥è¾“å…¥å‚æ•°å€¼ï¼");
 		}
 		Pointer PointOpen = new Pointer(new HeapMemoryBlock(length * 2));
 		JNative ReadTag = new JNative(EpcDll, "ReadTag");
@@ -317,18 +317,18 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL WriteTagSingleWord(HANDLE hCom, BYTE memBank, BYTE address,
-	 * BYTE data1, BYTE data2, BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º
-	 * Ïò±êÇ©Ð´Èë1¸ö×Ö£¨2×Ö½Ú£©µÄÄÚÈÝ¡££¨×¢£ºEPCÇøµÄµØÖ·0¡¢1²»¿ÉÐ´Èë£© ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL WriteTagSingleWord(HANDLE hCom, BYTE memBank, BYTE address,
+	 * BYTE data1, BYTE data2, BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š
+	 * å‘æ ‡ç­¾å†™å…¥1ä¸ªå­—ï¼ˆ2å­—èŠ‚ï¼‰çš„å†…å®¹ã€‚ï¼ˆæ³¨ï¼šEPCåŒºçš„åœ°å€0ã€1ä¸å¯å†™å…¥ï¼‰ è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param memBank
-	 *            ÒªÐ´µÄÇøÓò¡£¸÷ÖµµÄÒâÒåÈçÏÂ£º 0¡ª¡ª±£ÁôÇø 1¡ª¡ªEPCÇø 2¡ª¡ªTIDÇø 3¡ª¡ªÓÃ»§Çø
+	 *            è¦å†™çš„åŒºåŸŸã€‚å„å€¼çš„æ„ä¹‰å¦‚ä¸‹ï¼š 0â€”â€”ä¿ç•™åŒº 1â€”â€”EPCåŒº 2â€”â€”TIDåŒº 3â€”â€”ç”¨æˆ·åŒº
 	 * @param address
-	 *            ÒªÐ´ÇøÓòÖÐµÄµØÖ·£¬È¡ÖµÎª·¶Î§0-7£¨memBankÎªEPCÇøÊ±£¬ 0¡¢ 1²»¿ÉÈ¡£©¡£
+	 *            è¦å†™åŒºåŸŸä¸­çš„åœ°å€ï¼Œå–å€¼ä¸ºèŒƒå›´0-7ï¼ˆmemBankä¸ºEPCåŒºæ—¶ï¼Œ 0ã€ 1ä¸å¯å–ï¼‰ã€‚
 	 * @param data
-	 *            ÒªÐ´ÈëÄÚÈÝµÄ4Î»16½øÖÆ×Ö·û´®£¨Èç¹ûÖ»´«Èë1¸ö×Ö½ÚÊý£¬µÚ2¸ö×Ö½Ú×Ô¶¯²¹00£¬ÒòÎªÖ±½Ó¿ØÖÆ´«ÈëµÄ×Ö·û³¤¶È¼°ÀàÐÍ£©
+	 *            è¦å†™å…¥å†…å®¹çš„4ä½16è¿›åˆ¶å­—ç¬¦ä¸²ï¼ˆå¦‚æžœåªä¼ å…¥1ä¸ªå­—èŠ‚æ•°ï¼Œç¬¬2ä¸ªå­—èŠ‚è‡ªåŠ¨è¡¥00ï¼Œå› ä¸ºç›´æŽ¥æŽ§åˆ¶ä¼ å…¥çš„å­—ç¬¦é•¿åº¦åŠç±»åž‹ï¼‰
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -339,9 +339,9 @@ public class EpcSDKDll {
 		if (memBank >= 0 && memBank <= 3) {
 			if (memBank == 1 && (address == 0 || address == 1)) {
 				throw new NativeException(
-						"µ±memBankÎªEPCÇøÊ±£¬ ÒªÐ´ÇøÓòÖÐµÄµØÖ·address²»ÄÜµÈÓÚ0»ò1£¬Ö»ÄÜÈ¡Öµ2-7£¡");
+						"å½“memBankä¸ºEPCåŒºæ—¶ï¼Œ è¦å†™åŒºåŸŸä¸­çš„åœ°å€addressä¸èƒ½ç­‰äºŽ0æˆ–1ï¼Œåªèƒ½å–å€¼2-7ï¼");
 			} else {
-				// 16½øÖÆ×Ö·û´®³¤¶È±ØÐëµÈÓÚ4
+				// 16è¿›åˆ¶å­—ç¬¦ä¸²é•¿åº¦å¿…é¡»ç­‰äºŽ4
 				if (hex.length() == 4 && matcherStringIsHex(hex)) {
 					byte[] data = hexStringToByte(hex);
 					JNative WriteTagSingleWord = new JNative(EpcDll,
@@ -357,31 +357,31 @@ public class EpcSDKDll {
 					result = Integer.parseInt(WriteTagSingleWord.getRetVal());
 				} else {
 					throw new NativeException(
-							"Ð´Èë×Ö·û³¤¶È±ØÐë4Î»²¢ÇÒÎª16½øÖÆ×Ö·û£¬Çë¼ì²éÊäÈëhex²ÎÊýÖµ£®");
+							"å†™å…¥å­—ç¬¦é•¿åº¦å¿…é¡»4ä½å¹¶ä¸”ä¸º16è¿›åˆ¶å­—ç¬¦ï¼Œè¯·æ£€æŸ¥è¾“å…¥hexå‚æ•°å€¼ï¼Ž");
 				}
 			}
 		} else {
 			throw new NativeException(
-					"ÒªÐ´µÄÇøÓòÖµ´íÎó£¬Ð´ÈëÇøÓòÖµ·¶Î§0-3£®0¡ª¡ª±£ÁôÇø£¬1¡ª¡ªEPCÇø£¬2¡ª¡ªTIDÇø£¬3¡ª¡ªÓÃ»§Çø");
+					"è¦å†™çš„åŒºåŸŸå€¼é”™è¯¯ï¼Œå†™å…¥åŒºåŸŸå€¼èŒƒå›´0-3ï¼Ž0â€”â€”ä¿ç•™åŒºï¼Œ1â€”â€”EPCåŒºï¼Œ2â€”â€”TIDåŒºï¼Œ3â€”â€”ç”¨æˆ·åŒº");
 		}
 		System.out.println("writeTagSingleWord:" + result);
 		return result;
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL FastWriteTagID(HANDLE hCom, int bytesNum, const BYTE* bytes,
-	 * BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º
-	 * ¿ìÐ´±êÇ©ID£¨¿ìÐ´±êÇ©µÄ16½øÖÆ×Ö·ûÊÇ´Óºó¿ªÊ¼Ð´½ø±êÇ©¿¨ÖÐ,ÆæÊý³¤¶ÈµÄ×Ö·û´®×îºóÒ»Î»²»Ð´Èë±êÇ©¿¨²¢00´úÌæÐ´Èë±êÇ©¿¨ÖÐ£© ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL FastWriteTagID(HANDLE hCom, int bytesNum, const BYTE* bytes,
+	 * BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š
+	 * å¿«å†™æ ‡ç­¾IDï¼ˆå¿«å†™æ ‡ç­¾çš„16è¿›åˆ¶å­—ç¬¦æ˜¯ä»ŽåŽå¼€å§‹å†™è¿›æ ‡ç­¾å¡ä¸­,å¥‡æ•°é•¿åº¦çš„å­—ç¬¦ä¸²æœ€åŽä¸€ä½ä¸å†™å…¥æ ‡ç­¾å¡å¹¶00ä»£æ›¿å†™å…¥æ ‡ç­¾å¡ä¸­ï¼‰ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param Port
-	 *            ´®¿Ú¾ä±ú
+	 *            ä¸²å£å¥æŸ„
 	 * @param byteCount
-	 *            ÒªÐ´ÈëÄÚÈÝµÄ×Ö½ÚÊý£¬±ØÐëÎª2£¬4£¬6£¬8£¬10£¬»ò12¡£
+	 *            è¦å†™å…¥å†…å®¹çš„å­—èŠ‚æ•°ï¼Œå¿…é¡»ä¸º2ï¼Œ4ï¼Œ6ï¼Œ8ï¼Œ10ï¼Œæˆ–12ã€‚
 	 * @param data
-	 *            ÒªÐ´ÈëÄÚÈÝ
+	 *            è¦å†™å…¥å†…å®¹
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -405,18 +405,18 @@ public class EpcSDKDll {
 	/**
 	 * BOOL FastWriteTag(HANDLE hCom, BYTE memBank, BYTE address, BYTE
 	 * WordCount,const BYTE* bytes,BYTE ReaderAddr)
-	 * ¹¦ÄÜËµÃ÷£º¿ìÐ´±êÇ©£¨¿ìÐ´±êÇ©µÄ16½øÖÆ×Ö·ûÊÇ´Óºó¿ªÊ¼Ð´½ø±êÇ©¿¨ÖÐ,ÆæÊý³¤¶ÈµÄ×Ö·û´®×îºóÒ»Î»²»Ð´Èë±êÇ©¿¨²¢00´úÌæÐ´Èë±êÇ©¿¨ÖÐ£© ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * åŠŸèƒ½è¯´æ˜Žï¼šå¿«å†™æ ‡ç­¾ï¼ˆå¿«å†™æ ‡ç­¾çš„16è¿›åˆ¶å­—ç¬¦æ˜¯ä»ŽåŽå¼€å§‹å†™è¿›æ ‡ç­¾å¡ä¸­,å¥‡æ•°é•¿åº¦çš„å­—ç¬¦ä¸²æœ€åŽä¸€ä½ä¸å†™å…¥æ ‡ç­¾å¡å¹¶00ä»£æ›¿å†™å…¥æ ‡ç­¾å¡ä¸­ï¼‰ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param memBank
-	 *            ÒªÐ´Èë±êÇ©µÄÇøÓò¡£¸÷ÖµµÄÒâÒåÈçÏÂ£º0x00¡ª¡ª±£ÁôÇø 0x01¡ª¡ªEPCÇø 0x02¡ª¡ªTIDÇø 0x03¡ª¡ªÓÃ»§Çø
+	 *            è¦å†™å…¥æ ‡ç­¾çš„åŒºåŸŸã€‚å„å€¼çš„æ„ä¹‰å¦‚ä¸‹ï¼š0x00â€”â€”ä¿ç•™åŒº 0x01â€”â€”EPCåŒº 0x02â€”â€”TIDåŒº 0x03â€”â€”ç”¨æˆ·åŒº
 	 * @param address
-	 *            ÒªÐ´ÈëÇøÓòÖÐµÄµØÖ·£¬memBankÎªEPCÇøÊ±£¬µØÖ··¶Î§Îª2-7£¬×î´óWordCountÎª6£»
-	 *            Îª±£ÁôÇøÊ±£¬µØÖ··¶Î§Îª0-3£¬×î´óWordCountÎª4£» ÎªÊý¾ÝÇøÊ±£¬Ö·Ö··¶Î§Îª0-31£¬×î´óWordCountÎª8£»
+	 *            è¦å†™å…¥åŒºåŸŸä¸­çš„åœ°å€ï¼ŒmemBankä¸ºEPCåŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º2-7ï¼Œæœ€å¤§WordCountä¸º6ï¼›
+	 *            ä¸ºä¿ç•™åŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º0-3ï¼Œæœ€å¤§WordCountä¸º4ï¼› ä¸ºæ•°æ®åŒºæ—¶ï¼Œå€å€èŒƒå›´ä¸º0-31ï¼Œæœ€å¤§WordCountä¸º8ï¼›
 	 * @param wordCount
-	 *            ÒªÐ´ÈëÄÚÈÝµÄ³¤¶È£¬ÒÔ×ÖÎªµ¥Î»£¬1¸ö×ÖÎª2¸ö×Ö½Ú
+	 *            è¦å†™å…¥å†…å®¹çš„é•¿åº¦ï¼Œä»¥å­—ä¸ºå•ä½ï¼Œ1ä¸ªå­—ä¸º2ä¸ªå­—èŠ‚
 	 * @param data
-	 *            ÒªÐ´ÈëµÄÊý¾Ý
+	 *            è¦å†™å…¥çš„æ•°æ®
 	 * @param readAddr
 	 * @return
 	 * @throws NativeException
@@ -441,11 +441,11 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL InitializeTag(HANDLE hCom, BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º ³õÊ¼»¯±êÇ©¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL InitializeTag(HANDLE hCom, BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š åˆå§‹åŒ–æ ‡ç­¾ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -462,10 +462,10 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * ²âÊÔÊ§°Ü£¬Ô­Òò²»Ã÷ º¯ÊýÔ­ÐÍ LockPassWordTag (HANDLE hCom,BYTE passwd1,BYTE
+	 * æµ‹è¯•å¤±è´¥ï¼ŒåŽŸå› ä¸æ˜Ž å‡½æ•°åŽŸåž‹ LockPassWordTag (HANDLE hCom,BYTE passwd1,BYTE
 	 * passwd2,BYTE passwd3,BYTE passwd4,BYTE lockType, BYTE ReaderAddr);
-	 * ¹¦ÄÜËµÃ÷£ºÍ¨¹ý·ÃÎÊÃÜÂëËø¶¨±êÇ© lockTypeÖµ ½âËøÀàÐÍ 00 UNLOCK USER 01 UNLOCK TID 02 UNLOCK EPC
-	 * 03 UNLOCK ACCESS 04 UNLOCK KILL 05 UNLOCK ALL ÆäËûÖµ DO NOT UNLOCK
+	 * åŠŸèƒ½è¯´æ˜Žï¼šé€šè¿‡è®¿é—®å¯†ç é”å®šæ ‡ç­¾ lockTypeå€¼ è§£é”ç±»åž‹ 00 UNLOCK USER 01 UNLOCK TID 02 UNLOCK EPC
+	 * 03 UNLOCK ACCESS 04 UNLOCK KILL 05 UNLOCK ALL å…¶ä»–å€¼ DO NOT UNLOCK
 	 * 
 	 * @param password
 	 * @param lockType
@@ -492,16 +492,16 @@ public class EpcSDKDll {
 			LockPassWordTag.invoke();
 			result = Integer.parseInt(LockPassWordTag.getRetVal());
 		} else {
-			throw new NativeException("Ð´Èë×Ö·û³¤¶È±ØÐë8Î»²¢ÇÒÎª16½øÖÆ×Ö·û£¬Çë¼ì²éÊäÈëhex²ÎÊýÖµ£®");
+			throw new NativeException("å†™å…¥å­—ç¬¦é•¿åº¦å¿…é¡»8ä½å¹¶ä¸”ä¸º16è¿›åˆ¶å­—ç¬¦ï¼Œè¯·æ£€æŸ¥è¾“å…¥hexå‚æ•°å€¼ï¼Ž");
 		}
 		return result;
 	}
 
 	/**
-	 * ²âÊÔÊ§°Ü£¬Ô­Òò²»Ã÷ º¯ÊýÔ­ÐÍUnlockPassWordTag(HANDLE hCom,BYTE passwd1,BYTE
+	 * æµ‹è¯•å¤±è´¥ï¼ŒåŽŸå› ä¸æ˜Ž å‡½æ•°åŽŸåž‹UnlockPassWordTag(HANDLE hCom,BYTE passwd1,BYTE
 	 * passwd2,BYTE passwd3,BYTE passwd4,BYTE lockType, BYTE ReaderAddr);
-	 * ¹¦ÄÜËµÃ÷£ºÍ¨¹ý·ÃÎÊÃÜÂë½âËø±êÇ© lockTypeÖµ ½âËøÀàÐÍ 00 UNLOCK USER 01 UNLOCK TID 02 UNLOCK EPC
-	 * 03 UNLOCK ACCESS 04 UNLOCK KILL 05 UNLOCK ALL ÆäËûÖµ DO NOT UNLOCK
+	 * åŠŸèƒ½è¯´æ˜Žï¼šé€šè¿‡è®¿é—®å¯†ç è§£é”æ ‡ç­¾ lockTypeå€¼ è§£é”ç±»åž‹ 00 UNLOCK USER 01 UNLOCK TID 02 UNLOCK EPC
+	 * 03 UNLOCK ACCESS 04 UNLOCK KILL 05 UNLOCK ALL å…¶ä»–å€¼ DO NOT UNLOCK
 	 * 
 	 * @param password
 	 * @param lockType
@@ -529,23 +529,23 @@ public class EpcSDKDll {
 			UnlockPassWordTag.invoke();
 			result = Integer.parseInt(UnlockPassWordTag.getRetVal());
 		} else {
-			throw new NativeException("Ð´Èë×Ö·û³¤¶È±ØÐë8Î»²¢ÇÒÎª16½øÖÆ×Ö·û£¬Çë¼ì²éÊäÈëhex²ÎÊýÖµ£®");
+			throw new NativeException("å†™å…¥å­—ç¬¦é•¿åº¦å¿…é¡»8ä½å¹¶ä¸”ä¸º16è¿›åˆ¶å­—ç¬¦ï¼Œè¯·æ£€æŸ¥è¾“å…¥hexå‚æ•°å€¼ï¼Ž");
 		}
 		return result;
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL GetReaderParameters(HANDLE hCom, int addr, int paramNum, BYTE*
-	 * params, BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º »ñÈ¡¶à¸ö¶ÁÐ´Æ÷²ÎÊý¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL GetReaderParameters(HANDLE hCom, int addr, int paramNum, BYTE*
+	 * params, BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š èŽ·å–å¤šä¸ªè¯»å†™å™¨å‚æ•°ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param addr
-	 *            Òª²éÑ¯µÄ¶ÁÐ´Æ÷²ÎÊýµÄÆðÊ¼µØÖ·£¨¸÷²ÎÊýµÄ¶ÔÓ¦µØÖ·²Î¿¼¸½±í1-11£©
+	 *            è¦æŸ¥è¯¢çš„è¯»å†™å™¨å‚æ•°çš„èµ·å§‹åœ°å€ï¼ˆå„å‚æ•°çš„å¯¹åº”åœ°å€å‚è€ƒé™„è¡¨1-11ï¼‰
 	 * @param paramNum
-	 *            Òª²éÑ¯µÄ¶ÁÐ´Æ÷²ÎÊýµÄÊýÁ¿
+	 *            è¦æŸ¥è¯¢çš„è¯»å†™å™¨å‚æ•°çš„æ•°é‡
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
-	 * @return ·µ»Ø¶ÔÓ¦µØÖ·²ÎÊýÖµ£¨×¢£ºµÚÒ»¸ö²ÎÊýÎª¶ÁÈ¡µØÖ·£¬µÚ¶þ¸ö¡¢µÚÈý¸ö[ÒÔ´ËÀàÍÆ]²ÎÊýÊÇ¶ÔÓ¦µØÖ·µÄÊýÖµ£®£©
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
+	 * @return è¿”å›žå¯¹åº”åœ°å€å‚æ•°å€¼ï¼ˆæ³¨ï¼šç¬¬ä¸€ä¸ªå‚æ•°ä¸ºè¯»å–åœ°å€ï¼Œç¬¬äºŒä¸ªã€ç¬¬ä¸‰ä¸ª[ä»¥æ­¤ç±»æŽ¨]å‚æ•°æ˜¯å¯¹åº”åœ°å€çš„æ•°å€¼ï¼Žï¼‰
 	 * @throws NativeException
 	 * @throws IllegalAccessException
 	 */
@@ -569,18 +569,18 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL SetReaderParameters(HANDLE hCom, int addr, int paramNum, const
-	 * BYTE* params, BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º ÉèÖÃ¶à¸ö¶ÁÐ´Æ÷²ÎÊý¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL SetReaderParameters(HANDLE hCom, int addr, int paramNum, const
+	 * BYTE* params, BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š è®¾ç½®å¤šä¸ªè¯»å†™å™¨å‚æ•°ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param addr
-	 *            Òª²éÑ¯µÄ¶ÁÐ´Æ÷²ÎÊýµÄÆðÊ¼µØÖ·£¨¸÷²ÎÊýµÄ¶ÔÓ¦µØÖ·²Î¿¼¸½±í1-11£©
+	 *            è¦æŸ¥è¯¢çš„è¯»å†™å™¨å‚æ•°çš„èµ·å§‹åœ°å€ï¼ˆå„å‚æ•°çš„å¯¹åº”åœ°å€å‚è€ƒé™„è¡¨1-11ï¼‰
 	 * @param paramNum
-	 *            Òª²éÑ¯µÄ¶ÁÐ´Æ÷²ÎÊýµÄÊýÁ¿
+	 *            è¦æŸ¥è¯¢çš„è¯»å†™å™¨å‚æ•°çš„æ•°é‡
 	 * @param params
-	 *            ¶ÁÐ´Æ÷²ÎÊýµÄÊý×éµØÖ·
+	 *            è¯»å†™å™¨å‚æ•°çš„æ•°ç»„åœ°å€
 	 * @param readAddr
-	 *            ¶ÁÍ·µØÖ·£¬Ò»Ì¨Ö÷»ú½Ó¶àÌ¨¶ÁÍ·Ê±Ê¹ÓÃ£¬½Óµ¥Ì¨¶ÁÍ·Ê±ÖÃÎª0£»
+	 *            è¯»å¤´åœ°å€ï¼Œä¸€å°ä¸»æœºæŽ¥å¤šå°è¯»å¤´æ—¶ä½¿ç”¨ï¼ŒæŽ¥å•å°è¯»å¤´æ—¶ç½®ä¸º0ï¼›
 	 * @return
 	 * @throws NativeException
 	 * @throws IllegalAccessException
@@ -602,9 +602,9 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * ²âÊÔ²»³É¹¦ º¯ÊýÔ­ÐÍ£º BOOL ReadTIDByEpcID(HANDLE hCom, const BYTE* bytes,BYTE*
-	 * data,BYTE ReaderAddr); ¹¦ÄÜËµÃ÷£º Ö¸¶¨±êÇ©µÄEPCÇøºÅÂë£¨12¸ö×Ö½Ú£©¶ÁÈ¡¶ÔÓ¦±êÇ©µÄTIDÇø£¨8¸ö×Ö½Ú£© ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * æµ‹è¯•ä¸æˆåŠŸ å‡½æ•°åŽŸåž‹ï¼š BOOL ReadTIDByEpcID(HANDLE hCom, const BYTE* bytes,BYTE*
+	 * data,BYTE ReaderAddr); åŠŸèƒ½è¯´æ˜Žï¼š æŒ‡å®šæ ‡ç­¾çš„EPCåŒºå·ç ï¼ˆ12ä¸ªå­—èŠ‚ï¼‰è¯»å–å¯¹åº”æ ‡ç­¾çš„TIDåŒºï¼ˆ8ä¸ªå­—èŠ‚ï¼‰ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param readAddr
 	 * @return
@@ -637,18 +637,18 @@ public class EpcSDKDll {
 	/**
 	 * BOOL ReadByEpcID(HANDLE hCom, BYTE memBank, BYTE address, BYTE
 	 * WordCount,const BYTE* EpcID, BYTE* data,BYTE ReaderAddr)
-	 * ¹¦ÄÜËµÃ÷£ºÖ¸¶¨±êÇ©µÄEPCÇøºÅÂë£¨12¸ö×Ö½Ú£©¶ÁÈ¡¶ÔÓ¦±êÇ©£¬Í¨³£ÔÚÖ÷´ÓÄ£Ê½ÏÂÊ¹ÓÃ¸Ãº¯Êý¡£ ·µ»ØÖµ£º
-	 * ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * åŠŸèƒ½è¯´æ˜Žï¼šæŒ‡å®šæ ‡ç­¾çš„EPCåŒºå·ç ï¼ˆ12ä¸ªå­—èŠ‚ï¼‰è¯»å–å¯¹åº”æ ‡ç­¾ï¼Œé€šå¸¸åœ¨ä¸»ä»Žæ¨¡å¼ä¸‹ä½¿ç”¨è¯¥å‡½æ•°ã€‚ è¿”å›žå€¼ï¼š
+	 * æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param memBank
-	 *            ÒªÐ´Èë±êÇ©µÄÇøÓò¡£¸÷ÖµµÄÒâÒåÈçÏÂ£º0x00¡ª¡ª±£ÁôÇø 0x01¡ª¡ªEPCÇø 0x02¡ª¡ªTIDÇø 0x03¡ª¡ªÓÃ»§Çø
+	 *            è¦å†™å…¥æ ‡ç­¾çš„åŒºåŸŸã€‚å„å€¼çš„æ„ä¹‰å¦‚ä¸‹ï¼š0x00â€”â€”ä¿ç•™åŒº 0x01â€”â€”EPCåŒº 0x02â€”â€”TIDåŒº 0x03â€”â€”ç”¨æˆ·åŒº
 	 * @param address
-	 *            ÒªÐ´ÈëÇøÓòÖÐµÄµØÖ·£¬memBankÎªEPCÇøÊ±£¬µØÖ··¶Î§Îª2-7£¬×î´óWordCountÎª6£»
-	 *            Îª±£ÁôÇøÊ±£¬µØÖ··¶Î§Îª0-3£¬×î´óWordCountÎª4£» ÎªÊý¾ÝÇøÊ±£¬Ö·Ö··¶Î§Îª0-31£¬×î´óWordCountÎª8£»
+	 *            è¦å†™å…¥åŒºåŸŸä¸­çš„åœ°å€ï¼ŒmemBankä¸ºEPCåŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º2-7ï¼Œæœ€å¤§WordCountä¸º6ï¼›
+	 *            ä¸ºä¿ç•™åŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º0-3ï¼Œæœ€å¤§WordCountä¸º4ï¼› ä¸ºæ•°æ®åŒºæ—¶ï¼Œå€å€èŒƒå›´ä¸º0-31ï¼Œæœ€å¤§WordCountä¸º8ï¼›
 	 * @param wordCount
-	 *            ÒªÐ´ÈëÄÚÈÝµÄ³¤¶È£¬ÒÔ×ÖÎªµ¥Î»£¬1¸ö×ÖÎª2¸ö×Ö½Ú
+	 *            è¦å†™å…¥å†…å®¹çš„é•¿åº¦ï¼Œä»¥å­—ä¸ºå•ä½ï¼Œ1ä¸ªå­—ä¸º2ä¸ªå­—èŠ‚
 	 * @param epcID
-	 *            EPC ºÅÂëÖ¸Õë£¬°üº¬12¸ö×Ö½ÚµÄEPCÊý¾Ý
+	 *            EPC å·ç æŒ‡é’ˆï¼ŒåŒ…å«12ä¸ªå­—èŠ‚çš„EPCæ•°æ®
 	 * @param readAddr
 	 * @return
 	 * @throws NativeException
@@ -681,21 +681,21 @@ public class EpcSDKDll {
 	}
 
 	/**
-	 * º¯ÊýÔ­ÐÍ£º BOOL WriteByEpcID(HANDLE hCom, BYTE memBank, BYTE address, BYTE
-	 * WordCount,const BYTE* EpcID,BYTE* data,BYTE ReaderAddr) ¹¦ÄÜËµÃ÷£º
-	 * ÏòÖ¸¶¨±êÇ©µÄEPCÇøºÅÂë£¨12¸ö×Ö½Ú£©ÖÐµÄÌØ¶¨µØÖ·Ð´Èëdata, ·µ»ØÖµ£º ³É¹¦Ê±·µ»ØTRUE£¨1£©£¬Ê§°ÜÊ±·µ»ØFALSE£¨0£©
+	 * å‡½æ•°åŽŸåž‹ï¼š BOOL WriteByEpcID(HANDLE hCom, BYTE memBank, BYTE address, BYTE
+	 * WordCount,const BYTE* EpcID,BYTE* data,BYTE ReaderAddr) åŠŸèƒ½è¯´æ˜Žï¼š
+	 * å‘æŒ‡å®šæ ‡ç­¾çš„EPCåŒºå·ç ï¼ˆ12ä¸ªå­—èŠ‚ï¼‰ä¸­çš„ç‰¹å®šåœ°å€å†™å…¥data, è¿”å›žå€¼ï¼š æˆåŠŸæ—¶è¿”å›žTRUEï¼ˆ1ï¼‰ï¼Œå¤±è´¥æ—¶è¿”å›žFALSEï¼ˆ0ï¼‰
 	 * 
 	 * @param memBank
-	 *            ÒªÐ´Èë±êÇ©µÄÇøÓò¡£¸÷ÖµµÄÒâÒåÈçÏÂ£º0x00¡ª¡ª±£ÁôÇø 0x01¡ª¡ªEPCÇø 0x02¡ª¡ªTIDÇø 0x03¡ª¡ªÓÃ»§Çø
+	 *            è¦å†™å…¥æ ‡ç­¾çš„åŒºåŸŸã€‚å„å€¼çš„æ„ä¹‰å¦‚ä¸‹ï¼š0x00â€”â€”ä¿ç•™åŒº 0x01â€”â€”EPCåŒº 0x02â€”â€”TIDåŒº 0x03â€”â€”ç”¨æˆ·åŒº
 	 * @param address
-	 *            ÒªÐ´ÈëÇøÓòÖÐµÄµØÖ·£¬memBankÎªEPCÇøÊ±£¬µØÖ··¶Î§Îª2-7£¬×î´óWordCountÎª6£»
-	 *            Îª±£ÁôÇøÊ±£¬µØÖ··¶Î§Îª0-3£¬×î´óWordCountÎª4£» ÎªÊý¾ÝÇøÊ±£¬Ö·Ö··¶Î§Îª0-31£¬×î´óWordCountÎª8£»
+	 *            è¦å†™å…¥åŒºåŸŸä¸­çš„åœ°å€ï¼ŒmemBankä¸ºEPCåŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º2-7ï¼Œæœ€å¤§WordCountä¸º6ï¼›
+	 *            ä¸ºä¿ç•™åŒºæ—¶ï¼Œåœ°å€èŒƒå›´ä¸º0-3ï¼Œæœ€å¤§WordCountä¸º4ï¼› ä¸ºæ•°æ®åŒºæ—¶ï¼Œå€å€èŒƒå›´ä¸º0-31ï¼Œæœ€å¤§WordCountä¸º8ï¼›
 	 * @param wordCount
-	 *            ÒªÐ´ÈëÄÚÈÝµÄ³¤¶È£¬ÒÔ×ÖÎªµ¥Î»£¬1¸ö×ÖÎª2¸ö×Ö½Ú
+	 *            è¦å†™å…¥å†…å®¹çš„é•¿åº¦ï¼Œä»¥å­—ä¸ºå•ä½ï¼Œ1ä¸ªå­—ä¸º2ä¸ªå­—èŠ‚
 	 * @param epcID
-	 *            EPC ºÅÂëÖ¸Õë£¬°üº¬12¸ö×Ö½ÚµÄEPCÊý¾Ý
+	 *            EPC å·ç æŒ‡é’ˆï¼ŒåŒ…å«12ä¸ªå­—èŠ‚çš„EPCæ•°æ®
 	 * @param data
-	 *            ÒªÐ´ÈëµÄÊý¾Ý
+	 *            è¦å†™å…¥çš„æ•°æ®
 	 * @param readAddr
 	 * @return
 	 * @throws NativeException

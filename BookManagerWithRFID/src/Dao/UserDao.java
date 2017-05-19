@@ -11,7 +11,7 @@ import Model.User;
 public class UserDao {
 	
 	/**
-	 * µÇÂ¼ÑéÖ¤
+	 * ç™»å½•éªŒè¯
 	 * @param con
 	 * @param user
 	 * @return

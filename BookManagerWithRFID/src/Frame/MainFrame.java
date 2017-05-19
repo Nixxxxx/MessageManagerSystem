@@ -150,7 +150,7 @@ public class MainFrame extends JFrame {
 		menu.add(mntmNewMenuItem_1);
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int result=JOptionPane.showConfirmDialog(null,"确定要退出系统？");
+				int result=JOptionPane.showConfirmDialog(null,"纭畾瑕侀��鍑虹郴缁燂紵");
 				if(result==0)
 				dispose();
 			}
@@ -177,7 +177,7 @@ public class MainFrame extends JFrame {
 		lblNewLabel.setBounds(483, 330, 433, 217);
 		desktopPane.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("微软雅黑", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font("寰蒋闆呴粦", Font.BOLD, 20));
 		lblNewLabel.setIcon(new ImageIcon(MainFrame.class.getResource("/images/\u4E66\u7C4D\u7BA1\u7406.png")));
 		contentPane.setLayout(gl_contentPane);
 		

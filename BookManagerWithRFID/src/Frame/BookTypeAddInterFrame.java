@@ -23,7 +23,7 @@ import java.sql.Connection;
 import java.awt.event.ActionEvent;
 
 	/**
-	 * Í¼ÊéÀà±ğÌí¼Ó
+	 * å›¾ä¹¦ç±»åˆ«æ·»åŠ 
 	 * @param evt
 	 */
 public class BookTypeAddInterFrame extends JInternalFrame {
@@ -125,7 +125,7 @@ public class BookTypeAddInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * Ìí¼ÓÊÂ¼ş
+	 * æ·»åŠ äº‹ä»¶
 	 * @param evt
 	 */
 	private void bookTypeAdd(ActionEvent evt) {
@@ -134,22 +134,22 @@ public class BookTypeAddInterFrame extends JInternalFrame {
 		BookType bookType=new BookType(bookTypeName,bookTypeDesc);
 		Connection con=null;
 		if(StringUtil.isEmpty(bookTypeName)){
-			JOptionPane.showMessageDialog(null,"Í¼ÊéÀàĞÍÃû²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç±»å‹åä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 			try {
 			con=dbUtil.getCon();
 			int result=BookTypeDao.add(con,bookType);
 			if(result==-1)
-				JOptionPane.showMessageDialog(null,"Í¼ÊéÀàĞÍÃûÒÑ´æÔÚ£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦ç±»å‹åå·²å­˜åœ¨ï¼");
 			else if(result==1){
-					JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦£¡");
+					JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸï¼");
 					resetValues();
 				}
-				else JOptionPane.showMessageDialog(null,"Ìí¼ÓÊ§°Ü£¡");
+				else JOptionPane.showMessageDialog(null,"æ·»åŠ å¤±è´¥ï¼");
 			} catch (Exception e1) {
 				e1.printStackTrace();
-				JOptionPane.showMessageDialog(null,"Í¼ÊéÌí¼ÓÊ§°Ü£¡");
+				JOptionPane.showMessageDialog(null,"å›¾ä¹¦æ·»åŠ å¤±è´¥ï¼");
 			}finally{
 				try {
 					dbUtil.close(con);
@@ -160,7 +160,7 @@ public class BookTypeAddInterFrame extends JInternalFrame {
 	}
 
 	/**
-	 * ÖØÖÃÊÂ¼ş
+	 * é‡ç½®äº‹ä»¶
 	 */
 	private void resetValues() {
 		bookTypeNameTxt.setText("");

@@ -80,7 +80,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 		setBounds(100, 100, 811, 795);
 		
 		JLabel lblNewLabel = new JLabel("\u56FE\u4E66\u7F16\u53F7\uFF1A");
-		lblNewLabel.setFont(new Font("ËÎÌå", Font.BOLD, 17));
+		lblNewLabel.setFont(new Font("å®‹ä½“", Font.BOLD, 17));
 		
 		idSearchTxt = new JTextField();
 		idSearchTxt.setColumns(10);
@@ -309,7 +309,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 
 	/**
-	 * Êó±êµã»÷ÊÂ¼ş
+	 * é¼ æ ‡ç‚¹å‡»äº‹ä»¶
 	 */
 	protected void bookTableMousePress() {
 		int row=table.getSelectedRow();
@@ -319,9 +319,9 @@ public class BookManageInterFrameId extends JInternalFrame {
 		priceTxt.setText((String)table.getValueAt(row, 4));
 		pressTxt.setText((String)table.getValueAt(row, 5));
 		bookDescTxt.setText((String)table.getValueAt(row, 6));
-		if(((String)table.getValueAt(row, 3)).equals("ÄĞ"))
+		if(((String)table.getValueAt(row, 3)).equals("ç”·"))
 			man.setSelected(true);
-		else if(((String)table.getValueAt(row, 3)).equals("Å®"))
+		else if(((String)table.getValueAt(row, 3)).equals("å¥³"))
 				women.setSelected(true);
 		else buttonGroup.clearSelection();
 		
@@ -336,7 +336,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 
 	/**
-	 * ĞŞ¸ÄÊÂ¼ş
+	 * ä¿®æ”¹äº‹ä»¶
 	 */
 	private void update() {
 		String id=idTxt.getText();
@@ -346,28 +346,28 @@ public class BookManageInterFrameId extends JInternalFrame {
 		String bookDesc=bookDescTxt.getText();
 		String press=pressTxt.getText();
 		if(StringUtil.isEmpty(idTxt.getText())){
-			JOptionPane.showMessageDialog(null,"ÇëÑ¡ÔñÄúÒªĞŞ¸ÄµÄÍ¼Êé£¡");
+			JOptionPane.showMessageDialog(null,"è¯·é€‰æ‹©æ‚¨è¦ä¿®æ”¹çš„å›¾ä¹¦ï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(bookName)){
-			JOptionPane.showMessageDialog(null,"Í¼ÊéÃû³Æ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦åç§°ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(author)){
-			JOptionPane.showMessageDialog(null,"Í¼Êé×÷Õß²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä½œè€…ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(press)){
-			JOptionPane.showMessageDialog(null,"³ö°æÉç²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å‡ºç‰ˆç¤¾ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		if(StringUtil.isEmpty(price)){
-			JOptionPane.showMessageDialog(null,"Í¼Êé¼Û¸ñ²»ÄÜÎª¿Õ£¡");
+			JOptionPane.showMessageDialog(null,"å›¾ä¹¦ä»·æ ¼ä¸èƒ½ä¸ºç©ºï¼");
 			return;
 		}
 		String sex="";
-		if(man.isSelected()) sex="ÄĞ";
-		else sex="Å®";
+		if(man.isSelected()) sex="ç”·";
+		else sex="å¥³";
 		
 		BookType bookType=(BookType) bookTypeJcb.getSelectedItem();
 		int bookTypeId=bookType.getId();
@@ -378,13 +378,13 @@ public class BookManageInterFrameId extends JInternalFrame {
 			con=dbUtil.getCon();
 			int result=BookDao.update(con,book);
 			if(result==1){
-				JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦");
+				JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸ");
 				resetValues();
 				search("");
-			}else JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÊ§°Ü£¡");
+			}else JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¤±è´¥ï¼");
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÊ§°Ü£¡");
+			JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¤±è´¥ï¼");
 		}finally{
 			try {
 				dbUtil.close(con);
@@ -395,25 +395,25 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 
 	/**
-	 * É¾³ıÊÂ¼ş
+	 * åˆ é™¤äº‹ä»¶
 	 */
 	private void delete() {
 		Connection con=null;
 		if(StringUtil.isEmpty(idTxt.getText())){
-			JOptionPane.showMessageDialog(null,"ÇëÑ¡ÔñÄúÒªÉ¾³ıµÄÍ¼Êé£¡");
+			JOptionPane.showMessageDialog(null,"è¯·é€‰æ‹©æ‚¨è¦åˆ é™¤çš„å›¾ä¹¦ï¼");
 			return;
 		}else{
 			try {
 			con=dbUtil.getCon();
 			int result=BookDao.delete(con,idTxt.getText());
 			if(result==1){
-				JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦£¡");
+				JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸï¼");
 				resetValues();
 				search("");
-			}else JOptionPane.showMessageDialog(null,"É¾³ıÊ§°Ü£¡");
+			}else JOptionPane.showMessageDialog(null,"åˆ é™¤å¤±è´¥ï¼");
 		} catch (Exception e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"É¾³ıÊ§°Ü£¡");
+			JOptionPane.showMessageDialog(null,"åˆ é™¤å¤±è´¥ï¼");
 		}finally{
 			try {
 				dbUtil.close(con);
@@ -426,7 +426,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 
 	/**
-	 * ²éÑ¯ÊÂ¼ş
+	 * æŸ¥è¯¢äº‹ä»¶
 	 */
 	private void search(String type) {
 		DefaultTableModel dtm=(DefaultTableModel) table.getModel(); 
@@ -439,7 +439,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 			ResultSet rs=BookDao.searchWithId(con, book);
 			if(type.equals("search")){
 				if(!rs.next()){
-					JOptionPane.showMessageDialog(null,"ÎŞÏà¹ØÍ¼ÊéĞÅÏ¢£¡");
+					JOptionPane.showMessageDialog(null,"æ— ç›¸å…³å›¾ä¹¦ä¿¡æ¯ï¼");
 					return;
 			}
 			rs.previous();	
@@ -458,8 +458,8 @@ public class BookManageInterFrameId extends JInternalFrame {
 					v.add(rss.getString("booktypename"));
 				}
 				if(rs.getInt("conditions")==1)
-					v.add("ÔÚ¿â");
-				else	v.add("½è³ö");
+					v.add("åœ¨åº“");
+				else	v.add("å€Ÿå‡º");
 				dtm.addRow(v);
 			}
 		} catch (Exception e) {
@@ -474,7 +474,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 	
 	/**
-	 * ÖØÖÃÊÂ¼ş
+	 * é‡ç½®äº‹ä»¶
 	 */
 	private void resetValues(){
 		idTxt.setText("");
@@ -488,7 +488,7 @@ public class BookManageInterFrameId extends JInternalFrame {
 	}
 	
 	/**
-	 * ÏÂÀ­¿òÌî³ä
+	 * ä¸‹æ‹‰æ¡†å¡«å……
 	 */
 	private void fillBookType(){
 		Connection con=null;
