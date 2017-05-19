@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 
 
 /*
- * ¹¤¾ßÀà
+ * å·¥å…·ç±»
  */
 
 public class Util { 
@@ -24,19 +24,19 @@ public class Util {
 	
 
 	
-	private static String dbUrl="jdbc:mysql://localhost:3306/db";               //Êı¾İ¿âµØÖ·    
-	private static String dbUserName="root";                                    //ÓÃ»§Ãû
-	private static String dbPassword="123456";                                  //ÃÜÂë
-	private static String jdbcName="com.jdbc.mysql.Drive";                      //Çı¶¯Ãû×Ö
+	private static String dbUrl="jdbc:mysql://localhost:3306/db";               //æ•°æ®åº“åœ°å€    
+	private static String dbUserName="root";                                    //ç”¨æˆ·å
+	private static String dbPassword="123456";                                  //å¯†ç 
+	private static String jdbcName="com.jdbc.mysql.Drive";                      //é©±åŠ¨åå­—
 	
 	
 	public static Connection getCon() throws Exception{
-		Class.forName("com.mysql.jdbc.Driver");                                 //¼ÓÔØÇı¶¯
-		Connection con=DriverManager.getConnection(dbUrl,dbUserName,dbPassword);//Êı¾İ¿âÁ´½Ó 
+		Class.forName("com.mysql.jdbc.Driver");                                 //åŠ è½½é©±åŠ¨
+		Connection con=DriverManager.getConnection(dbUrl,dbUserName,dbPassword);//æ•°æ®åº“é“¾æ¥ 
         return con;
 	}
 	
-	public void close(PreparedStatement pstmt,Connection con) throws Exception{           //Êı¾İ¿â¹Ø±Õ
+	public void close(PreparedStatement pstmt,Connection con) throws Exception{           //æ•°æ®åº“å…³é—­
 		if(pstmt!=null){
 			pstmt.close();
 			if(con!=null)
@@ -46,7 +46,7 @@ public class Util {
 	}
 		
 	
-	public static Image getImage(String path){                                   //·µ»ØÍ¼Æ¬
+	public static Image getImage(String path){                                   //è¿”å›å›¾ç‰‡
 		URL u=Util.class.getClassLoader().getResource(path);
 		BufferedImage img =null;
 		try {

@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 /*
- * Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³´°¿ÚÀà
+ * å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿçª—å£ç±»
  */
 
 public class MyFrame extends JFrame{
@@ -33,21 +33,21 @@ public class MyFrame extends JFrame{
 	private static Util db=new Util();
 	
 	
-		public void myFrame(){												//¼ÓÔØµÇÂ¼´°¿Ú		
-			JLabel jl1=new JLabel("ÓÃ»§Ãû");jl1.setFont(new Font("ËÎÌå",0,17));jl1.setForeground(Color.white);
-			JLabel jl2=new JLabel("ÃÜÂë");jl2.setFont(new Font("ËÎÌå",0,17));jl2.setForeground(Color.white);
+		public void myFrame(){												//åŠ è½½ç™»å½•çª—å£		
+			JLabel jl1=new JLabel("ç”¨æˆ·å");jl1.setFont(new Font("å®‹ä½“",0,17));jl1.setForeground(Color.white);
+			JLabel jl2=new JLabel("å¯†ç ");jl2.setFont(new Font("å®‹ä½“",0,17));jl2.setForeground(Color.white);
 			JTextField jt=new JTextField (null);
 			JPasswordField jp=new JPasswordField(null);
-			JLabel top=new JLabel("Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³");top.setFont(new Font("Î¢ÈíÑÅºÚ",1,43));top.setForeground(Color.PINK);
-			JLabel low=new JLabel("V1.0");low.setFont(new Font("Î¢ÈíÑÅºÚ",1,20));low.setForeground(Color.PINK);
+			JLabel top=new JLabel("å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ");top.setFont(new Font("å¾®è½¯é›…é»‘",1,43));top.setForeground(Color.PINK);
+			JLabel low=new JLabel("V1.0");low.setFont(new Font("å¾®è½¯é›…é»‘",1,20));low.setForeground(Color.PINK);
 			
-			JButton jb1=new JButton ("µÇÂ¼");
+			JButton jb1=new JButton ("ç™»å½•");
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					try {
 						int result=0;
 						if(jt.getText().isEmpty()||String.valueOf(jp.getPassword()).isEmpty()){
-							JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû¡¢ÃÜÂë²»ÄÜÎª¿Õ£¡");
+							JOptionPane.showMessageDialog(null,"ç”¨æˆ·åã€å¯†ç ä¸èƒ½ä¸ºç©ºï¼");
 							result=-1;
 						}
 						else{
@@ -64,14 +64,14 @@ public class MyFrame extends JFrame{
 							}	
 						db.close(pstmt, con);
 						}	
-						if(result==0)JOptionPane.showMessageDialog(null,"ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+						if(result==0)JOptionPane.showMessageDialog(null,"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
 			});
-			JButton jb2=new JButton ("ÖØÖÃ");
+			JButton jb2=new JButton ("é‡ç½®");
 			jb2.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 				jt.setText(null);
@@ -96,34 +96,34 @@ public class MyFrame extends JFrame{
 			add(top);add(low);add(p1);add(p2);
 			
 			
-			BackgroundPanel bgp;                                                        //±³¾°Í¼Æ¬
+			BackgroundPanel bgp;                                                        //èƒŒæ™¯å›¾ç‰‡
 		    bgp=new BackgroundPanel((new ImageIcon("images/bg.jpg")).getImage());  
 		    bgp.setBounds(0,0,450,600);  
 		    this.getContentPane().add(bgp);
 			
-			new Methods().setFrame(this, "Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³¡ª¡ªµÇÂ¼", 1);
+			new Methods().setFrame(this, "å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿâ€”â€”ç™»å½•", 1);
 	    }
 		
 
 		
 		
 		
-		public void myFrame0(){										                  			//¼ÓÔØÄ¿Â¼´°¿Ú							
-			JButton jb1=new JButton("1£º²éÑ¯ÒÑÓĞÑ§Éú"); 
+		public void myFrame0(){										                  			//åŠ è½½ç›®å½•çª—å£							
+			JButton jb1=new JButton("1ï¼šæŸ¥è¯¢å·²æœ‰å­¦ç”Ÿ"); 
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					new MyFrame().myFrame01();
 				}
 			});
 			
-			JButton jb2=new JButton("2:Ìí¼ÓĞÂµÄÑ§Éú");
+			JButton jb2=new JButton("2:æ·»åŠ æ–°çš„å­¦ç”Ÿ");
 			jb2.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					new MyFrame().myFrame02();
 				}
 			});
 			
-			JButton jb3=new JButton("3:Ñ§Éú³É¼¨ÅÅĞĞ");
+			JButton jb3=new JButton("3:å­¦ç”Ÿæˆç»©æ’è¡Œ");
 			jb3.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					new MyFrame().myFrame03();
@@ -137,18 +137,18 @@ public class MyFrame extends JFrame{
 			p1.setOpaque(false);
 			add(p1,BorderLayout.CENTER);
 			
-			new Methods().setFrame(this, "Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³¡ª¡ªÄ¿Â¼", 1);
+			new Methods().setFrame(this, "å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿâ€”â€”ç›®å½•", 1);
 	    }
 		
 		
 		
 		
 		
-		public void myFrame01(){                                                                   //²éÑ¯ÒÑÓĞÑ§Éú
-			JLabel jl=new JLabel("Ñ§ºÅ");jl.setFont(new Font("ËÎÌå",0,17));jl.setForeground(Color.white);
+		public void myFrame01(){                                                                   //æŸ¥è¯¢å·²æœ‰å­¦ç”Ÿ
+			JLabel jl=new JLabel("å­¦å·");jl.setFont(new Font("å®‹ä½“",0,17));jl.setForeground(Color.white);
 			JTextField jt=new JTextField();
 			
-			JButton jb1=new JButton("²éÑ¯Ñ§ÉúĞÅÏ¢");
+			JButton jb1=new JButton("æŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯");
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					String[] student=new Methods().checkStudent(jt.getText());
@@ -156,7 +156,7 @@ public class MyFrame extends JFrame{
 				}
 			});
 			
-			JButton jb2=new JButton("²éÑ¯Ñ§Éú³É¼¨");
+			JButton jb2=new JButton("æŸ¥è¯¢å­¦ç”Ÿæˆç»©");
 			jb2.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					String[] student=new Methods().checkStudent(jt.getText());
@@ -174,35 +174,35 @@ public class MyFrame extends JFrame{
 			add(p1);add(p2);
 			p1.setOpaque(false);p2.setOpaque(false);
 			
-			new Methods().setFrame(this, "²éÑ¯ÒÑÓĞÑ§Éú", 0);
+			new Methods().setFrame(this, "æŸ¥è¯¢å·²æœ‰å­¦ç”Ÿ", 0);
 		}
 		
 		
 		
 		
-		public void myFrame011(String[] student){				                               //Ñ§ÉúĞÅÏ¢²é¿´ĞŞ¸Ä¼°É¾³ı	
+		public void myFrame011(String[] student){				                               //å­¦ç”Ÿä¿¡æ¯æŸ¥çœ‹ä¿®æ”¹åŠåˆ é™¤	
 			MyFrame frame=this;
-			JLabel jl1=new JLabel("Ñ§ºÅ");jl1.setFont(new Font("ËÎÌå",0,17));jl1.setForeground(Color.white);
-			JLabel jt1=new JLabel(student[0]);jt1.setFont(new Font("ËÎÌå",0,17));jt1.setForeground(Color.white);
-			JLabel jl2=new JLabel("ĞÕÃû");jl2.setFont(new Font("ËÎÌå",0,17));jl2.setForeground(Color.white);
+			JLabel jl1=new JLabel("å­¦å·");jl1.setFont(new Font("å®‹ä½“",0,17));jl1.setForeground(Color.white);
+			JLabel jt1=new JLabel(student[0]);jt1.setFont(new Font("å®‹ä½“",0,17));jt1.setForeground(Color.white);
+			JLabel jl2=new JLabel("å§“å");jl2.setFont(new Font("å®‹ä½“",0,17));jl2.setForeground(Color.white);
 			JTextField jt2=new JTextField();
-			JLabel jl3=new JLabel("ĞÔ±ğ");jl3.setFont(new Font("ËÎÌå",0,17));jl3.setForeground(Color.white);
+			JLabel jl3=new JLabel("æ€§åˆ«");jl3.setFont(new Font("å®‹ä½“",0,17));jl3.setForeground(Color.white);
 			JComboBox jt3=new JComboBox(); 
 			jt3.addItem("");
-	        jt3.addItem("ÄĞ");  
-	        jt3.addItem("Å®");
-			JLabel jl4=new JLabel("ÄêÁä");jl4.setFont(new Font("ËÎÌå",0,17));jl4.setForeground(Color.white);
+	        jt3.addItem("ç”·");  
+	        jt3.addItem("å¥³");
+			JLabel jl4=new JLabel("å¹´é¾„");jl4.setFont(new Font("å®‹ä½“",0,17));jl4.setForeground(Color.white);
 			JTextField jt4=new JTextField();
 			
 			jt2.setText(student[1]);
-			if(student[2].equals("ÄĞ"))
+			if(student[2].equals("ç”·"))
 			jt3.setSelectedIndex(1);
-			else if(student[2].equals("Å®"))
+			else if(student[2].equals("å¥³"))
 				jt3.setSelectedIndex(2);
 			else jt3.setSelectedIndex(0);
 			jt4.setText(student[3]);
 				
-			JButton jb1=new JButton("ĞŞ¸Ä");
+			JButton jb1=new JButton("ä¿®æ”¹");
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					String sql = "update db_student set name=?,sex=?,age=? where id=?";
@@ -210,7 +210,7 @@ public class MyFrame extends JFrame{
 				}
 			});
 			
-			JButton jb2=new JButton("É¾³ı");
+			JButton jb2=new JButton("åˆ é™¤");
 			jb2.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					new Methods().deleteStudent(frame,student[0]);
@@ -230,27 +230,27 @@ public class MyFrame extends JFrame{
 			add(p1);add(p2);
 			p1.setOpaque(false);p2.setOpaque(false);
 			
-			new Methods().setFrame(this, "Ñ§ÉúĞÅÏ¢¹ÜÀí", 0);
+			new Methods().setFrame(this, "å­¦ç”Ÿä¿¡æ¯ç®¡ç†", 0);
 	    }
 		
 		
 		
-		public void myFrame012(String[] student){											        		//Ñ§Éú³É¼¨²é¿´¼°ĞŞ¸Ä
+		public void myFrame012(String[] student){											        		//å­¦ç”Ÿæˆç»©æŸ¥çœ‹åŠä¿®æ”¹
 			MyFrame frame=this;
-			JLabel jl1=new JLabel("Ñ§ºÅ");jl1.setFont(new Font("ËÎÌå",0,17));jl1.setForeground(Color.white);
-			JLabel jla=new JLabel(student[0]);jla.setFont(new Font("ËÎÌå",0,17));jla.setForeground(Color.white);
-			JLabel jl2=new JLabel("ĞÕÃû");jl2.setFont(new Font("ËÎÌå",0,17));jl2.setForeground(Color.white);
-			JLabel jlb=new JLabel();jlb.setFont(new Font("ËÎÌå",0,17));jlb.setForeground(Color.white);
-			JLabel jl3=new JLabel("ÓïÎÄ³É¼¨");jl3.setFont(new Font("ËÎÌå",0,17));jl3.setForeground(Color.white);
+			JLabel jl1=new JLabel("å­¦å·");jl1.setFont(new Font("å®‹ä½“",0,17));jl1.setForeground(Color.white);
+			JLabel jla=new JLabel(student[0]);jla.setFont(new Font("å®‹ä½“",0,17));jla.setForeground(Color.white);
+			JLabel jl2=new JLabel("å§“å");jl2.setFont(new Font("å®‹ä½“",0,17));jl2.setForeground(Color.white);
+			JLabel jlb=new JLabel();jlb.setFont(new Font("å®‹ä½“",0,17));jlb.setForeground(Color.white);
+			JLabel jl3=new JLabel("è¯­æ–‡æˆç»©");jl3.setFont(new Font("å®‹ä½“",0,17));jl3.setForeground(Color.white);
 			JTextField jt3=new JTextField();
-			JLabel jl4=new JLabel("ÊıÑ§³É¼¨");jl4.setFont(new Font("ËÎÌå",0,17));jl4.setForeground(Color.white);
+			JLabel jl4=new JLabel("æ•°å­¦æˆç»©");jl4.setFont(new Font("å®‹ä½“",0,17));jl4.setForeground(Color.white);
 			JTextField jt4=new JTextField();
-			JLabel jl5=new JLabel("Ó¢Óï³É¼¨");jl5.setFont(new Font("ËÎÌå",0,17));jl5.setForeground(Color.white);
+			JLabel jl5=new JLabel("è‹±è¯­æˆç»©");jl5.setFont(new Font("å®‹ä½“",0,17));jl5.setForeground(Color.white);
 			JTextField jt5=new JTextField();
-			JLabel jl6=new JLabel("×Ü·Ö");jl6.setFont(new Font("ËÎÌå",0,17));jl6.setForeground(Color.white);
-			JLabel jt6=new JLabel();jt6.setFont(new Font("ËÎÌå",0,17));jt6.setForeground(Color.white);
-			JLabel jl7=new JLabel("ÅÅÃû");jl7.setFont(new Font("ËÎÌå",0,17));jl7.setForeground(Color.white);
-			JLabel jt7=new JLabel();jt7.setFont(new Font("ËÎÌå",0,17));jt7.setForeground(Color.white);
+			JLabel jl6=new JLabel("æ€»åˆ†");jl6.setFont(new Font("å®‹ä½“",0,17));jl6.setForeground(Color.white);
+			JLabel jt6=new JLabel();jt6.setFont(new Font("å®‹ä½“",0,17));jt6.setForeground(Color.white);
+			JLabel jl7=new JLabel("æ’å");jl7.setFont(new Font("å®‹ä½“",0,17));jl7.setForeground(Color.white);
+			JLabel jt7=new JLabel();jt7.setFont(new Font("å®‹ä½“",0,17));jt7.setForeground(Color.white);
 			
 			jlb.setText(student[1]);
 			jt3.setText(student[4]);
@@ -260,7 +260,7 @@ public class MyFrame extends JFrame{
 			jt7.setText(student[8]);
 			
 			
-			JButton jb1=new JButton("ĞŞ¸Ä");
+			JButton jb1=new JButton("ä¿®æ”¹");
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					String sql = "update db_student set chinese=?,math=?,english=?,score=? where id=?";
@@ -284,31 +284,31 @@ public class MyFrame extends JFrame{
 			add(p1);add(p2);
 			p1.setOpaque(false);p2.setOpaque(false);
 			
-			new Methods().setFrame(this, "Ñ§Éú³É¼¨¹ÜÀí", 0);
+			new Methods().setFrame(this, "å­¦ç”Ÿæˆç»©ç®¡ç†", 0);
 	    }
 		
 		
-		public void myFrame02(){                                                             //Ìí¼ÓÑ§Éú
+		public void myFrame02(){                                                             //æ·»åŠ å­¦ç”Ÿ
 			MyFrame frame=this;
-			JLabel jl1=new JLabel("Ñ§ºÅ");jl1.setFont(new Font("ËÎÌå",0,17));jl1.setForeground(Color.white);
-			JLabel jl2=new JLabel("ĞÕÃû");jl2.setFont(new Font("ËÎÌå",0,17));jl2.setForeground(Color.white);
-			JLabel jl3=new JLabel("ĞÔ±ğ");jl3.setFont(new Font("ËÎÌå",0,17));jl3.setForeground(Color.white);
-			JLabel jl4=new JLabel("ÄêÁä");jl4.setFont(new Font("ËÎÌå",0,17));jl4.setForeground(Color.white);
-			JLabel jl5=new JLabel("ÓïÎÄ³É¼¨");jl5.setFont(new Font("ËÎÌå",0,17));jl5.setForeground(Color.white);
-			JLabel jl6=new JLabel("ÊıÑ§³É¼¨");jl6.setFont(new Font("ËÎÌå",0,17));jl6.setForeground(Color.white);
-			JLabel jl7=new JLabel("Ó¢Óï³É¼¨");jl7.setFont(new Font("ËÎÌå",0,17));jl7.setForeground(Color.white);
+			JLabel jl1=new JLabel("å­¦å·");jl1.setFont(new Font("å®‹ä½“",0,17));jl1.setForeground(Color.white);
+			JLabel jl2=new JLabel("å§“å");jl2.setFont(new Font("å®‹ä½“",0,17));jl2.setForeground(Color.white);
+			JLabel jl3=new JLabel("æ€§åˆ«");jl3.setFont(new Font("å®‹ä½“",0,17));jl3.setForeground(Color.white);
+			JLabel jl4=new JLabel("å¹´é¾„");jl4.setFont(new Font("å®‹ä½“",0,17));jl4.setForeground(Color.white);
+			JLabel jl5=new JLabel("è¯­æ–‡æˆç»©");jl5.setFont(new Font("å®‹ä½“",0,17));jl5.setForeground(Color.white);
+			JLabel jl6=new JLabel("æ•°å­¦æˆç»©");jl6.setFont(new Font("å®‹ä½“",0,17));jl6.setForeground(Color.white);
+			JLabel jl7=new JLabel("è‹±è¯­æˆç»©");jl7.setFont(new Font("å®‹ä½“",0,17));jl7.setForeground(Color.white);
 			JTextField jt1=new JTextField();
 			JTextField jt2=new JTextField();
 			JComboBox jt3=new JComboBox();
 			jt3.addItem("");
-	        jt3.addItem("ÄĞ");  
-	        jt3.addItem("Å®"); 
+	        jt3.addItem("ç”·");  
+	        jt3.addItem("å¥³"); 
 			JTextField jt4=new JTextField(null);
 			JTextField jt5=new JTextField(null);
 			JTextField jt6=new JTextField(null);
 			JTextField jt7=new JTextField(null);
 			
-			JButton jb1=new JButton ("Ìí¼Ó");
+			JButton jb1=new JButton ("æ·»åŠ ");
 			jb1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					new Methods().addStudent(frame,jt1.getText(),jt2.getText(),(String) jt3.getSelectedItem(),jt4.getText(),
@@ -330,17 +330,17 @@ public class MyFrame extends JFrame{
 			add(p1);add(jb1);
 			p1.setOpaque(false);
 			
-			new Methods().setFrame(this, "Ìí¼ÓÑ§Éú", 0);
+			new Methods().setFrame(this, "æ·»åŠ å­¦ç”Ÿ", 0);
 		}
 		
 		
 		
-		public void myFrame03(){                                                                                  //Ñ§Éú³É¼¨ĞÅÏ¢ÁĞ±í
+		public void myFrame03(){                                                                                  //å­¦ç”Ÿæˆç»©ä¿¡æ¯åˆ—è¡¨
 			JTable table=new JTable();
-			String[] headers = { "Ñ§ºÅ", "ĞÕÃû", "ĞÔ±ğ","ÄêÁä","ÓïÎÄ³É¼¨","ÊıÑ§³É¼¨","Ó¢Óï³É¼¨","×Ü·Ö","ÅÅÃû" };//  
-			Object[][] cellData = null;                                                                 //±í¸ñ³õÊ¼»¯  
+			String[] headers = { "å­¦å·", "å§“å", "æ€§åˆ«","å¹´é¾„","è¯­æ–‡æˆç»©","æ•°å­¦æˆç»©","è‹±è¯­æˆç»©","æ€»åˆ†","æ’å" };//  
+			Object[][] cellData = null;                                                                 //è¡¨æ ¼åˆå§‹åŒ–  
 			myTableModel model = new myTableModel(cellData ,headers);                                    //
-			table.setEnabled(true);                                                                         //±í¸ñ²»¿É±à¼­
+			table.setEnabled(true);                                                                         //è¡¨æ ¼ä¸å¯ç¼–è¾‘
 			
 			table = new JTable(model); 
 			myTableModel tableModel=(myTableModel) table.getModel();
@@ -350,21 +350,21 @@ public class MyFrame extends JFrame{
 				e1.printStackTrace();
 			}
 			
-			table.getColumnModel().getColumn(0).setPreferredWidth(100);             //ÉèÖÃ±í¸ñ¸÷ÁĞ¿í¶È
+			table.getColumnModel().getColumn(0).setPreferredWidth(100);             //è®¾ç½®è¡¨æ ¼å„åˆ—å®½åº¦
 			table.getColumnModel().getColumn(2).setPreferredWidth(40);			  //
 			table.getColumnModel().getColumn(3).setPreferredWidth(40);              //
 			table.getColumnModel().getColumn(8).setPreferredWidth(35);              //
 			 
 			 
 			 
-			 JLabel jl=new JLabel("Ñ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³V1.0");
-			 jl.setOpaque(false);					//ÉèÖÃJLabelÍ¸Ã÷
-			 jl.setFont(new Font("Î¢ÈíÑÅºÚ",1,18));   //ÉèÖÃ×ÖÌå¡¢ÑùÊ½£¨´ÖÌåµÈ£©¡¢×ÖºÅ
-			 jl.setForeground(Color.WHITE);          //ÉèÖÃJLabel×ÖÌåÑÕÉ«
+			 JLabel jl=new JLabel("å­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»ŸV1.0");
+			 jl.setOpaque(false);					//è®¾ç½®JLabelé€æ˜
+			 jl.setFont(new Font("å¾®è½¯é›…é»‘",1,18));   //è®¾ç½®å­—ä½“ã€æ ·å¼ï¼ˆç²—ä½“ç­‰ï¼‰ã€å­—å·
+			 jl.setForeground(Color.WHITE);          //è®¾ç½®JLabelå­—ä½“é¢œè‰²
 			 JTextField jt=new JTextField();
 			
 			
-			 JButton jb1=new JButton("²éÑ¯Ñ§ÉúĞÅÏ¢");
+			 JButton jb1=new JButton("æŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯");
 				jb1.addActionListener(new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						String[] student=new Methods().checkStudent(jt.getText());
@@ -372,7 +372,7 @@ public class MyFrame extends JFrame{
 					}
 				});
 				
-				JButton jb2=new JButton("²éÑ¯Ñ§Éú³É¼¨");
+				JButton jb2=new JButton("æŸ¥è¯¢å­¦ç”Ÿæˆç»©");
 				jb2.addActionListener(new ActionListener(){
 					public void actionPerformed(ActionEvent e){
 						String[] student=new Methods().checkStudent(jt.getText());
@@ -395,7 +395,7 @@ public class MyFrame extends JFrame{
 			sp.setOpaque(false);p.setOpaque(false);
 			
 			
-			new Methods().setFrame(this, "²é¿´³É¼¨ÅÅÃû", 0);
+			new Methods().setFrame(this, "æŸ¥çœ‹æˆç»©æ’å", 0);
 		}
 		
 
@@ -418,11 +418,11 @@ class myTableModel extends DefaultTableModel
 {
 
 	public myTableModel(Object[][] data, Object[] columnNames){
-		super(data, columnNames);//ÕâÀïÒ»¶¨Òª¸²¸Ç¸¸ÀàµÄ¹¹Ôì·½·¨£¬·ñÔò²»ÄÜÊµÀımyTableModel
+		super(data, columnNames);//è¿™é‡Œä¸€å®šè¦è¦†ç›–çˆ¶ç±»çš„æ„é€ æ–¹æ³•ï¼Œå¦åˆ™ä¸èƒ½å®ä¾‹myTableModel
 	}
 
 	public boolean isCellEditable(int row, int column){
-		return false;//¸¸ÀàµÄ·½·¨ÀïÃæÊÇ return trueµÄ£¬ËùÒÔ¾Í¿ÉÒÔ±à¼­ÁË~~~
+		return false;//çˆ¶ç±»çš„æ–¹æ³•é‡Œé¢æ˜¯ return trueçš„ï¼Œæ‰€ä»¥å°±å¯ä»¥ç¼–è¾‘äº†~~~
 	}
 }
 

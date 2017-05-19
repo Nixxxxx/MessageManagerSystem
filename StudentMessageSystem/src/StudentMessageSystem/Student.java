@@ -2,7 +2,7 @@ package StudentMessageSystem;
 
 
 /*
- * Ñ§ÉúĞÅÏ¢Àà
+ * å­¦ç”Ÿä¿¡æ¯ç±»
  */
 
 public class Student {

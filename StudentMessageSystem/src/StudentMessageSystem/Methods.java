@@ -16,20 +16,20 @@ import javax.swing.table.DefaultTableModel;
 public class Methods {
 	private static Util db=new Util();
 	
-	public void setFrame(MyFrame frame,String title,int close){                                            //´°¿ÚÉèÖÃ
-		BackgroundPanel bgp;                                                        //±³¾°Í¼Æ¬
+	public void setFrame(MyFrame frame,String title,int close){                                            //çª—å£è®¾ç½®
+		BackgroundPanel bgp;                                                        //èƒŒæ™¯å›¾ç‰‡
 	    bgp=new BackgroundPanel((new ImageIcon("images/bg.jpg")).getImage());  
 	    bgp.setBounds(0,0,450,600);  
 	    frame.getContentPane().add(bgp);
 		
 		
-		frame.setTitle(title);                                    //´°¿Ú±êÌâ
-		frame.setSize(Util.FRAME_WIDTH,Util.FRAME_HEIGHT);        //´°¿Ú´óĞ¡
-		frame.setLocationRelativeTo(null);                        //´°¿Ú¾ÓÖĞ
-		frame.setResizable(false);                                //´°¿ÚÎŞ·¨À­Éì¡¢×î´ó»¯
+		frame.setTitle(title);                                    //çª—å£æ ‡é¢˜
+		frame.setSize(Util.FRAME_WIDTH,Util.FRAME_HEIGHT);        //çª—å£å¤§å°
+		frame.setLocationRelativeTo(null);                        //çª—å£å±…ä¸­
+		frame.setResizable(false);                                //çª—å£æ— æ³•æ‹‰ä¼¸ã€æœ€å¤§åŒ–
 		if(close==1)
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     //µã»÷´°¿ÚÓÒÉÏ½Ç¡°X¡±£¬³ÌĞò½áÊøÔËĞĞ
-		frame.setVisible(true);                                   //´°¿ÚÏÔÊ¾
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     //ç‚¹å‡»çª—å£å³ä¸Šè§’â€œXâ€ï¼Œç¨‹åºç»“æŸè¿è¡Œ
+		frame.setVisible(true);                                   //çª—å£æ˜¾ç¤º
 	}
 	
 //	public void paintComponent(Graphics g ){
@@ -41,7 +41,7 @@ public class Methods {
 //	}
 	
 	
-	public void addStudent(MyFrame frame,String id,String name,String sex,String age0,String chinese0,String math0,String english0){        //Ìí¼ÓÑ§ÉúĞÅÏ¢
+	public void addStudent(MyFrame frame,String id,String name,String sex,String age0,String chinese0,String math0,String english0){        //æ·»åŠ å­¦ç”Ÿä¿¡æ¯
 		int result=1;
 		char[] age1=age0.toCharArray();
 		char[] chinese1=chinese0.toCharArray();
@@ -73,7 +73,7 @@ public class Methods {
 		}
 		
 		
-			if(id.isEmpty()||name.isEmpty())JOptionPane.showMessageDialog(null, "Ñ§ºÅ¡¢ĞÕÃû²»ÄÜÎª¿Õ£¡");
+			if(id.isEmpty()||name.isEmpty())JOptionPane.showMessageDialog(null, "å­¦å·ã€å§“åä¸èƒ½ä¸ºç©ºï¼");
 			else{
 				if(result==1){
 					int age=0,chinese=0,math=0,english=0;
@@ -105,32 +105,32 @@ public class Methods {
 							pstmt.setInt(9,0);
 							result=pstmt.executeUpdate();
 					}
-					else JOptionPane.showMessageDialog(null, "Ñ§ºÅÒÑ´æÔÚ£¡");
+					else JOptionPane.showMessageDialog(null, "å­¦å·å·²å­˜åœ¨ï¼");
 					if(result==1){
-						JOptionPane.showMessageDialog(null,"Ìí¼Ó³É¹¦£¡");
+						JOptionPane.showMessageDialog(null,"æ·»åŠ æˆåŠŸï¼");
 						new Methods().updateStudent(id,1,1);
 						frame.dispose();
 						new MyFrame().myFrame02();
 						}
-					else JOptionPane.showMessageDialog(null,"Ìí¼ÓÊ§°Ü£¡");
+					else JOptionPane.showMessageDialog(null,"æ·»åŠ å¤±è´¥ï¼");
 					db.close(pstmt, con);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
 		}
-				else JOptionPane.showMessageDialog(null,"ÊäÈëÊı¾İÓĞÎó");
+				else JOptionPane.showMessageDialog(null,"è¾“å…¥æ•°æ®æœ‰è¯¯");
 		}
 	}
 	
-	public void updateStudent(String id,int model,int rank) throws Exception{                        //rank³É¼¨ÅÅÃûË¢ĞÂ(1:Ìí¼ÓºóË¢ĞÂ£¬2£ºĞŞ¸ÄºóË¢ĞÂ3£ºÉ¾³ıºóË¢ĞÂ
+	public void updateStudent(String id,int model,int rank) throws Exception{                        //rankæˆç»©æ’ååˆ·æ–°(1:æ·»åŠ ååˆ·æ–°ï¼Œ2ï¼šä¿®æ”¹ååˆ·æ–°3ï¼šåˆ é™¤ååˆ·æ–°
 		if(model==3||model==2){
 			Connection con=db.getCon();
 			String sql="select score,rank,id from db_student";
 			PreparedStatement pstmt=con.prepareStatement(sql);
 			ResultSet rs=pstmt.executeQuery();
 			rs.last();
-			int length=rs.getRow();                 //»ñÈ¡Êı¾İ¿âÊı¾İÌõÊı
+			int length=rs.getRow();                 //è·å–æ•°æ®åº“æ•°æ®æ¡æ•°
 			rs.beforeFirst();
 			while(rs.next()){
 					if(rank==length) break;
@@ -156,7 +156,7 @@ public class Methods {
 			pstmt=con.prepareStatement(sql);
 			ResultSet rs=pstmt.executeQuery();
 			rs.last();
-			int length=rs.getRow();                 //»ñÈ¡Êı¾İ¿âÊı¾İÌõÊı
+			int length=rs.getRow();                 //è·å–æ•°æ®åº“æ•°æ®æ¡æ•°
 			rs.beforeFirst();
 			if(rs.next()){
 				rs.previous();
@@ -190,7 +190,7 @@ public class Methods {
 		
 	}
 	
-	public static void deleteStudent(MyFrame frame,String id){                                       //É¾³ıÑ§ÉúĞÅÏ¢
+	public static void deleteStudent(MyFrame frame,String id){                                       //åˆ é™¤å­¦ç”Ÿä¿¡æ¯
 		try {
 			Connection con = db.getCon();
 			
@@ -208,10 +208,10 @@ public class Methods {
 	        pstmt.setString(1,id);
 	        int result=pstmt.executeUpdate();
 			if(result==1){
-				JOptionPane.showMessageDialog(null,"É¾³ı³É¹¦£¡");
+				JOptionPane.showMessageDialog(null,"åˆ é™¤æˆåŠŸï¼");
 				frame.dispose();
 			}
-			else JOptionPane.showMessageDialog(null,"É¾³ıÊ§°Ü£¡");
+			else JOptionPane.showMessageDialog(null,"åˆ é™¤å¤±è´¥ï¼");
 			db.close(pstmt, con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -219,7 +219,7 @@ public class Methods {
 		}
 	}
 	
-	public void changeStudentMessage(MyFrame frame,String sql,String one,String two,String three,String four){               //ĞŞ¸ÄÑ§ÉúĞÅÏ¢
+	public void changeStudentMessage(MyFrame frame,String sql,String one,String two,String three,String four){               //ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯
 		int result=1;
 		char[] age0=three.toCharArray();
 		for(int i=0;i<age0.length;i++){
@@ -240,21 +240,21 @@ public class Methods {
 	        pstmt.setInt(4,age);
 	        result=pstmt.executeUpdate();
 	        if(result==1) {
-	        	JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡");
+	        	JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼");
 	        	frame.dispose();
 	        }
-	        else JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÊ§°Ü£¡");
+	        else JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¤±è´¥ï¼");
 			db.close(pstmt, con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		}
-		else JOptionPane.showMessageDialog(null,"ÊäÈëÊı¾İÓĞÎó");
+		else JOptionPane.showMessageDialog(null,"è¾“å…¥æ•°æ®æœ‰è¯¯");
 	}
 	
 	
-	public void changeStudentGrade(MyFrame frame,String sql,String one,String two,String three,String id){ //ĞŞ¸ÄÑ§Éú³É¼¨
+	public void changeStudentGrade(MyFrame frame,String sql,String one,String two,String three,String id){ //ä¿®æ”¹å­¦ç”Ÿæˆç»©
 		int result=1;
 		char[] chinese0=one.toCharArray();
 		char[] math0=two.toCharArray();
@@ -293,7 +293,7 @@ public class Methods {
 					pstmt.setString(5,id);
 				    result=pstmt.executeUpdate();
 				    if(result==1){
-				    	JOptionPane.showMessageDialog(null,"ĞŞ¸Ä³É¹¦£¡");
+				    	JOptionPane.showMessageDialog(null,"ä¿®æ”¹æˆåŠŸï¼");
 				    	sql="select rank from db_student where id=?";
 						pstmt = con.prepareStatement(sql);
 						pstmt.setString(1,id);
@@ -304,21 +304,21 @@ public class Methods {
 					      }
 				    	frame.dispose();
 				    	}
-				    else JOptionPane.showMessageDialog(null,"ĞŞ¸ÄÊ§°Ü£¡");
+				    else JOptionPane.showMessageDialog(null,"ä¿®æ”¹å¤±è´¥ï¼");
 					db.close(pstmt, con);
 				} catch (Exception e) {
 						// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
 			}
-			else JOptionPane.showMessageDialog(null,"ÊäÈëÊı¾İÓĞÎó");
+			else JOptionPane.showMessageDialog(null,"è¾“å…¥æ•°æ®æœ‰è¯¯");
 	}
 	
 	
 	
-	public String[] checkStudent(String id){                                                //²éÑ¯Ñ§ÉúĞÅÏ¢
+	public String[] checkStudent(String id){                                                //æŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 		String[] student=new String[10];
-		if(id.isEmpty()) JOptionPane.showMessageDialog(null,"ÇëÊäÈëÑ§ºÅ");
+		if(id.isEmpty()) JOptionPane.showMessageDialog(null,"è¯·è¾“å…¥å­¦å·");
 		else {
 			try {
 			Connection con = db.getCon();
@@ -340,7 +340,7 @@ public class Methods {
 					student[8]=(rs.getInt("rank")+"");
 				}
 			}
-			else JOptionPane.showMessageDialog(null,"²éÎŞ´ËÈË£¡");
+			else JOptionPane.showMessageDialog(null,"æŸ¥æ— æ­¤äººï¼");
 			db.close(pstmt, con);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -354,7 +354,7 @@ public class Methods {
 	
 	
 	
-	public void fillTable(DefaultTableModel tableModel) throws Exception{                   //È«ÌåÑ§ÉúÁĞ±íÏÔÊ¾
+	public void fillTable(DefaultTableModel tableModel) throws Exception{                   //å…¨ä½“å­¦ç”Ÿåˆ—è¡¨æ˜¾ç¤º
 		Connection con=db.getCon();
 		String sql;
 		sql="select * from db_student";
